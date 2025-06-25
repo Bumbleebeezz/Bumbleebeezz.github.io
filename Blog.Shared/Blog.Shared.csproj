@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\DIY\" />
+    <Folder Include="DTOs\Photografy\" />
+    <Folder Include="Interfaces\DIY\" />
+    <Folder Include="Interfaces\Photografy\" />
+  </ItemGroup>
+
 </Project>

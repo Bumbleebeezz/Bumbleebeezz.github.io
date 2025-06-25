@@ -6,4 +6,19 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.Shared\Blog.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\Photografy\" />
+    <Folder Include="Enums\Photografy\" />
+    <Folder Include="Repositorys\DIY\" />
+    <Folder Include="Repositorys\Photografy\" />
+  </ItemGroup>
+
 </Project>
