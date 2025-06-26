@@ -1,4 +1,4 @@
-﻿using Blog.API.Services.Photografy;
+﻿
 using Blog.Shared.Interfaces.Photografy;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

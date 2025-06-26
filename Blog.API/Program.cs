@@ -25,9 +25,9 @@ builder.Services.TryAddTransient<DoItYourselfRepository>();
 builder.Services.TryAddTransient<RecipeRepository>();
 builder.Services.TryAddTransient<PhotografyRepository>();
 
-builder.Services.AddScoped<DoItYourselfService>();
-builder.Services.AddScoped<RecipeService>();
-builder.Services.AddScoped<PhotografyService>();
+builder.Services.TryAddTransient<DoItYourselfService>();
+builder.Services.TryAddTransient<RecipeService>();
+builder.Services.TryAddTransient<PhotografyService>();
 
 
 var app = builder.Build();
