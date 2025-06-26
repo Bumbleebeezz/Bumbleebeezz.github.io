@@ -9,5 +9,6 @@
         Repair = 4,
         Renovation = 5,
         Organization = 6
+        // Add more categories as needed
     }
 }

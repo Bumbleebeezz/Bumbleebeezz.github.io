@@ -7,5 +7,6 @@
         Cakes = 2,
         Cookies = 3,
         Chocolate = 4
+        // Add more categories as needed
     }
 }

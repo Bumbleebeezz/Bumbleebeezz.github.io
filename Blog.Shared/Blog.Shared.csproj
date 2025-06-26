@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\DIY\" />
-    <Folder Include="DTOs\Photografy\" />
-    <Folder Include="Interfaces\DIY\" />
-    <Folder Include="Interfaces\Photografy\" />
+    <PackageReference Include="Microsoft.Graph" Version="5.83.0" />
   </ItemGroup>
 
 </Project>

@@ -15,9 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\Photografy\" />
-    <Folder Include="Enums\Photografy\" />
-    <Folder Include="Repositorys\DIY\" />
     <Folder Include="Repositorys\Photografy\" />
   </ItemGroup>
 

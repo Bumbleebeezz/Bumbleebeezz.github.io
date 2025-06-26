@@ -1,8 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blog.API.Services.Foods;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.API.Controllers.Foods
 {
-    public class RecipeController(I) : ControllerBase
+    [ApiController]
+    [Authorize]
+    [Route("api/[controller]")]
+    public class RecipeController(
+        IRecipeService recipeService
+        ) : ControllerBase
     {
         
     }

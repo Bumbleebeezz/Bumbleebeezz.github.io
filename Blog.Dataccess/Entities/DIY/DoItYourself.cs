@@ -1,9 +1,8 @@
 ﻿using Blog.Dataccess.Enums.DIY;
-using Blog.Dataccess.Enums.Foods;
 
 namespace Blog.Dataccess.Entities.DIY
 {
-    public class DIY
+    public class DoItYourself
     {
         public int Id { get; set; }
         public string Name { get; set; }

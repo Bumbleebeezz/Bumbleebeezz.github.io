@@ -1,11 +1,12 @@
 ﻿using Blog.Dataccess.Entities.Foods;
+using Blog.Shared.DTOs.Foods;
 using Blog.Shared.Interfaces.Foods;
 
 namespace Blog.Dataccess.Repositorys.Foods
 {
-    public class RecipeRepository(BlogDbContext context) : IRecipeService<Recipe>
+    public class RecipeRepository(BlogDbContext context) : IRecipeService
     {
-        public Task AddRecipeAsync(Recipe recipe)
+        public async Task AddRecipeAsync(RecipeDto recipe)
         {
             throw new NotImplementedException();
         }
@@ -15,37 +16,27 @@ namespace Blog.Dataccess.Repositorys.Foods
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Recipe>> GetAllRecipesAsync()
+        public Task<IEnumerable<RecipeDto>> GetAllRecipesAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Recipe>> GetLatestRecipesAsync(int count)
+        public Task<RecipeDto> GetRecipeByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Recipe> GetRecipeByIdAsync(int id)
+        public Task<IEnumerable<RecipeDto>> GetRecipesByCategoryAsync(string category)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Recipe>> GetRecipesByCategoryAsync(string category)
+        public Task<IEnumerable<RecipeDto>> SearchRecipesAsync(string searchRecipe)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Recipe>> GetTopRatedRecipesAsync(int count)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Recipe>> SearchRecipesAsync(string searchTerm)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateRecipeAsync(Recipe recipe)
+        public Task UpdateRecipeAsync(RecipeDto recipe)
         {
             throw new NotImplementedException();
         }

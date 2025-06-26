@@ -9,8 +9,12 @@
   <ItemGroup>
     <Folder Include="Controllers\DIY\" />
     <Folder Include="Controllers\Photografy\" />
-    <Folder Include="Services\DIY\" />
     <Folder Include="Services\Photografy\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.Dataccess\Blog.Dataccess.csproj" />
+    <ProjectReference Include="..\Blog.Shared\Blog.Shared.csproj" />
   </ItemGroup>
 
 </Project>
