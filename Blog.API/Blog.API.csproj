@@ -7,9 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\DIY\" />
-    <Folder Include="Controllers\Photografy\" />
-    <Folder Include="Services\Photografy\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

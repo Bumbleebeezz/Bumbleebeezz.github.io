@@ -34,14 +34,16 @@ namespace Blog.API.Services.Foods
         /// <returns></returns>
         Task DeleteRecipeAsync(int id);
         /// <summary>
-        ///     Get a default recipe by search string.
+        ///     Get a default list of recipes by search string.
         /// </summary>
         /// <param searchRecipe="searchRecipe"></param>
+        /// <returns>list of recipies</returns>
         Task<IEnumerable<RecipeDto>> SearchRecipesAsync(string searchRecipe);
         /// <summary>
-        ///     Get a default recipe by category.
+        ///     Get a default list of recipe by category.
         /// </summary>
         /// <param category="category">Category of a recipe</param>
+        /// <returns>list of recipies</returns>
         Task<IEnumerable<RecipeDto>> GetRecipesByCategoryAsync(string category);
     }
 }

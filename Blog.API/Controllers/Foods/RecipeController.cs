@@ -6,7 +6,7 @@ namespace Blog.API.Controllers.Foods
 {
     [ApiController]
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("api/recipe/[controller]")]
     public class RecipeController(
         IRecipeService recipeService
         ) : ControllerBase
