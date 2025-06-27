@@ -2,14 +2,14 @@
 
 namespace Blog.Shared.Interfaces.DIY
 {
-    public interface IDoItYourselfService
+    public interface IDoItYourselfService<T> where T : class
     {
-        Task<IEnumerable<DoItYourselfDto>> GetAllDIYsAsync();
-        Task<DoItYourselfDto> GetDIYByIdAsync(int id);
+        Task<IEnumerable<T>> GetAllDIYsAsync();
+        Task<T> GetDIYByIdAsync(int id);
         Task AddDIYAsync(DoItYourselfDto diy);
         Task UpdateDIYAsync(DoItYourselfDto diy);
         Task DeleteDIYAsync(int id);
-        Task<IEnumerable<DoItYourselfDto>> SearchDIYsAsync(string searchDIY);
-        Task<IEnumerable<DoItYourselfDto>> GetDIYsByCategoryAsync(string category);
+        Task<IEnumerable<T>> SearchDIYsAsync(string searchDIY);
+        Task<IEnumerable<T>> GetDIYsByCategoryAsync(string category);
     }
 }
