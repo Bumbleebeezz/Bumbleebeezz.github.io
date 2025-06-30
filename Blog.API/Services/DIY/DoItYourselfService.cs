@@ -1,29 +1,45 @@
-﻿using Blog.Dataccess.Repositorys.DIY;
+﻿using Blog.Dataccess.Entities.DIY;
+using Blog.Dataccess.Repositorys.DIY;
 using Blog.Shared.DTOs.DIY;
+using Blog.Shared.Interfaces.DIY;
 
 namespace Blog.API.Services.DIY
 {
-    public class DoItYourselfService(DoItYourselfRepository doItYourselfRepository) : IDoItYourselfService
+    public class DoItYourselfService(DoItYourselfRepository doItYourselfRepository) : IDoItYourselfService<DoItYourself>
     {
-        public async Task AddDIYAsync(DoItYourselfDto diy)
-        => await doItYourselfRepository.AddDIYAsync(diy);
+        public Task AddDIYAsync(DoItYourselfDto diy)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task DeleteDIYAsync(int id)
-        => await doItYourselfRepository.DeleteDIYAsync(id);
+        public Task DeleteDIYAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task<IEnumerable<DoItYourselfDto>> GetAllDIYsAsync()
-        => await doItYourselfRepository.GetAllDIYsAsync();
+        public Task<IEnumerable<DoItYourself>> GetAllDIYsAsync()
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task<DoItYourselfDto> GetDIYByIdAsync(int id)
-        => await doItYourselfRepository.GetDIYByIdAsync(id);
+        public Task<DoItYourself> GetDIYByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task<IEnumerable<DoItYourselfDto>> GetDIYsByCategoryAsync(string category)
-        => await doItYourselfRepository.GetDIYsByCategoryAsync(category);
+        public Task<IEnumerable<DoItYourself>> GetDIYsByCategoryAsync(string category)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task<IEnumerable<DoItYourselfDto>> SearchDIYsAsync(string searchDIY)
-        => await doItYourselfRepository.SearchDIYsAsync(searchDIY);
+        public Task<IEnumerable<DoItYourself>> SearchDIYsAsync(string searchDIY)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task UpdateDIYAsync(DoItYourselfDto diy)
-        => await doItYourselfRepository.UpdateDIYAsync(diy);
+        public Task UpdateDIYAsync(DoItYourselfDto diy)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

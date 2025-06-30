@@ -4,7 +4,7 @@ using Blog.Shared.DTOs.DIY;
 
 namespace Blog.Dataccess.Repositorys.DIY
 {
-    public class DoItYourselfRepository(BlogDbContext context) : IDoItYourselfService
+    public class DoItYourselfRepository(BlogDbContext context) : IDoItYourselfService<DoItYourself>
     {
         public Task AddDIYAsync(DoItYourselfDto diy)
         {
@@ -16,22 +16,22 @@ namespace Blog.Dataccess.Repositorys.DIY
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<DoItYourselfDto>> GetAllDIYsAsync()
+        public Task<IEnumerable<DoItYourself>> GetAllDIYsAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<DoItYourselfDto> GetDIYByIdAsync(int id)
+        public Task<DoItYourself> GetDIYByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<DoItYourselfDto>> GetDIYsByCategoryAsync(string category)
+        public Task<IEnumerable<DoItYourself>> GetDIYsByCategoryAsync(string category)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<DoItYourselfDto>> SearchDIYsAsync(string searchDIY)
+        public Task<IEnumerable<DoItYourself>> SearchDIYsAsync(string searchDIY)
         {
             throw new NotImplementedException();
         }

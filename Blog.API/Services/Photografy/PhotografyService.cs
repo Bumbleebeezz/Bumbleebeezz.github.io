@@ -1,29 +1,45 @@
-﻿using Blog.Dataccess.Repositorys.Photografy;
+﻿using Blog.Dataccess.Entities.Photografy;
+using Blog.Dataccess.Repositorys.Photografy;
 using Blog.Shared.DTOs.Photografy;
+using Blog.Shared.Interfaces.Photografy;
 
 namespace Blog.API.Services.Photografy
 {
-    public class PhotografyService(PhotografyRepository photografyRepository) : IPhotografyService
+    public class PhotografyService(PhotografyRepository photografyRepository) : IPhotografyService<Photo>
     {
-        public async Task AddPhotografyAsync(PhotoDto photografy)
-        => await photografyRepository.AddPhotografyAsync(photografy);
+        public Task AddPhotografyAsync(PhotoDto photografy)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task DeletePhotografyAsync(int id)
-        => await photografyRepository.DeletePhotografyAsync(id);
+        public Task DeletePhotografyAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task<IEnumerable<PhotoDto>> GetAllPhotografiesAsync()
-        => await photografyRepository.GetAllPhotografiesAsync();
+        public Task<IEnumerable<Photo>> GetAllPhotografiesAsync()
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task<IEnumerable<PhotoDto>> GetPhotografiesByCategoryAsync(string category)
-        => await photografyRepository.GetPhotografiesByCategoryAsync(category);
+        public Task<IEnumerable<Photo>> GetPhotografiesByCategoryAsync(string category)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task<PhotoDto> GetPhotografyByIdAsync(int id)
-        => await photografyRepository.GetPhotografyByIdAsync(id);
+        public Task<Photo> GetPhotografyByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task<IEnumerable<PhotoDto>> SearchPhotografiesAsync(string searchTerm)
-        => await photografyRepository.SearchPhotografiesAsync(searchTerm);
+        public Task<IEnumerable<Photo>> SearchPhotografiesAsync(string searchTerm)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task UpdatePhotografyAsync(PhotoDto photografy)
-        => await photografyRepository.UpdatePhotografyAsync(photografy);
+        public Task UpdatePhotografyAsync(PhotoDto photografy)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

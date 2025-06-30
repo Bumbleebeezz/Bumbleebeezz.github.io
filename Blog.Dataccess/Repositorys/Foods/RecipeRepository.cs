@@ -4,9 +4,9 @@ using Blog.Shared.Interfaces.Foods;
 
 namespace Blog.Dataccess.Repositorys.Foods
 {
-    public class RecipeRepository(BlogDbContext context) : IRecipeService
+    public class RecipeRepository(BlogDbContext context) : IRecipeService<Recipe>
     {
-        public async Task AddRecipeAsync(RecipeDto recipe)
+        public Task AddRecipeAsync(RecipeDto recipe)
         {
             throw new NotImplementedException();
         }
@@ -16,22 +16,22 @@ namespace Blog.Dataccess.Repositorys.Foods
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<RecipeDto>> GetAllRecipesAsync()
+        public Task<IEnumerable<Recipe>> GetAllRecipesAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<RecipeDto> GetRecipeByIdAsync(int id)
+        public Task<Recipe> GetRecipeByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<RecipeDto>> GetRecipesByCategoryAsync(string category)
+        public Task<IEnumerable<Recipe>> GetRecipesByCategoryAsync(string category)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<RecipeDto>> SearchRecipesAsync(string searchRecipe)
+        public Task<IEnumerable<Recipe>> SearchRecipesAsync(string searchRecipe)
         {
             throw new NotImplementedException();
         }

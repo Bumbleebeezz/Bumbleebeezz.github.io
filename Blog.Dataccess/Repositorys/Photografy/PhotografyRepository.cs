@@ -6,7 +6,7 @@ using Microsoft.Graph.Models;
 
 namespace Blog.Dataccess.Repositorys.Photografy
 {
-    public class PhotografyRepository(BlogDbContext context) : IPhotografyService
+    public class PhotografyRepository(BlogDbContext context) : IPhotografyService<Photo>
     {
         public Task AddPhotografyAsync(PhotoDto photografy)
         {
@@ -18,22 +18,22 @@ namespace Blog.Dataccess.Repositorys.Photografy
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<PhotoDto>> GetAllPhotografiesAsync()
+        public Task<IEnumerable<Photo>> GetAllPhotografiesAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<PhotoDto>> GetPhotografiesByCategoryAsync(string category)
+        public Task<IEnumerable<Photo>> GetPhotografiesByCategoryAsync(string category)
         {
             throw new NotImplementedException();
         }
 
-        public Task<PhotoDto> GetPhotografyByIdAsync(int id)
+        public Task<Photo> GetPhotografyByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<PhotoDto>> SearchPhotografiesAsync(string searchTerm)
+        public Task<IEnumerable<Photo>> SearchPhotografiesAsync(string searchTerm)
         {
             throw new NotImplementedException();
         }
