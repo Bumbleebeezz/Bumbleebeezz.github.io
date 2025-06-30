@@ -1,0 +1,78 @@
+
+
+header, footer {
+    background-color: #393F4A;
+}
+
+p {
+    font-family: 'jura-variablefont_wght', sans-serif;
+    color : white;
+}
+
+
+
+.brand{
+    color : white;
+    font-size : 1.6em;
+}
+.nav-menu-item {
+    color: white;
+    font-size: 1em;
+}
+.main{
+    padding-top : 10em;
+    padding-left : 10em;
+}
+.mainHeader {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.welcomeHeader{
+    font-size : 2em;
+}
+.welcomeBody {
+    font-size: 1.3em;
+}
+
+.mh2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.mh3 {
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.mh4 {
+    grid-row: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+div.scroll-container {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+    div.scroll-container img {
+        padding: 10px;
+    }
+
+@font-face {
+    font-family: 'figtree-variablefont_wght';
+    src: url('../fonts/figtree-variablefont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'jura-variablefont_wght';
+    src: url('../fonts/jura-variablefont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'offside-regular';
+    src: url('../fonts/offside-regular.ttf') format('truetype');
+}
