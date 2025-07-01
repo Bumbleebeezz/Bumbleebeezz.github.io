@@ -7,9 +7,24 @@ header, footer {
 p {
     font-family: 'jura-variablefont_wght', sans-serif;
     color : white;
+    padding : 0.5em;
 }
 
+.btn {
+    background-color: darkorange;
+    width: 200px;
+    border-radius: 50px;
+    border: 1px solid #3C3C43;
+    color: #393F4A;
+    font-family: 'jura-variablefont_wght', sans-serif;
+    font-weight : bold;
+    padding: 0.4em;
+}
 
+.main {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
 
 .brand{
     color : white;
@@ -19,16 +34,6 @@ p {
     color: white;
     font-size: 1em;
 }
-.main{
-    padding-top : 10em;
-    padding-left : 10em;
-}
-.mainHeader {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
-}
 
 .welcomeHeader{
     font-size : 2em;
@@ -37,42 +42,36 @@ p {
     font-size: 1.3em;
 }
 
-.mh2 {
-    grid-column-start: 1;
-    grid-row-start: 2;
+.imgCarousel {
+    width: 30vw;
+}
+.carouselImg{
+    width : 100%;
 }
 
-.mh3 {
-    grid-column-start: 1;
-    grid-row-start: 3;
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    padding: 15px;
+    gap: 5px;
 }
 
-.mh4 {
-    grid-row: span 3 / span 3;
-    grid-column-start: 2;
-    grid-row-start: 1;
+.flex-container > div {
+    border-radius: 5px;
+    padding: 8px;
 }
 
-div.scroll-container {
-    background-color: #333;
-    overflow: auto;
-    white-space: nowrap;
-    padding: 10px;
+
+.mainHeaderText {
+    /* flex:0 1 auto; */
+    align-self: center;
 }
 
-    div.scroll-container img {
-        padding: 10px;
-    }
-
-@font-face {
-    font-family: 'figtree-variablefont_wght';
-    src: url('../fonts/figtree-variablefont_wght.ttf') format('truetype');
-}
 @font-face {
     font-family: 'jura-variablefont_wght';
     src: url('../fonts/jura-variablefont_wght.ttf') format('truetype');
 }
-@font-face {
-    font-family: 'offside-regular';
-    src: url('../fonts/offside-regular.ttf') format('truetype');
-}
+
+
+       
