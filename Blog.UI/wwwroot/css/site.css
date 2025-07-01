@@ -11,17 +11,48 @@ p {
 }
 
 .btn {
-    background-color: darkorange;
-    width: 200px;
+    background-color: #D27D2D;
+    width: 150px;
     border-radius: 50px;
-    border: 1px solid #3C3C43;
     color: #393F4A;
     font-family: 'jura-variablefont_wght', sans-serif;
-    font-weight : bold;
-    padding: 0.4em;
+    font-weight: bold;
+    padding: 0.3em;
+}
+.btn:hover {
+    background-color: white;
+    color: #393F4A;
+    font-family: 'jura-variablefont_wght', sans-serif;
+    font-weight: bold;
 }
 
-.main {
+.card{
+    border: none;
+}
+.cardIcon{
+    width: 18rem;
+    justify-self : center;
+    align-self: center;
+}
+.card-title {
+    font-family: 'playwriteustrad-variablefont_wght', sans-serif;
+    font-size: 1.7em;
+}
+.card-title:hover {
+    text-decoration: underline #D27D2D;
+}
+.card-text {
+    font-size: 1.5em;
+}
+.connectIcon {
+    width: 2rem;
+    margin-left : 1em;
+}
+.connectIcon:hover {
+    
+}
+
+.main, .mainBody {
     padding-top: 5em;
     padding-bottom: 5em;
 }
@@ -35,11 +66,19 @@ p {
     font-size: 1em;
 }
 
-.welcomeHeader{
-    font-size : 2em;
+.welcomeHeader {
+    font-size: 2em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
 }
 .welcomeBody {
+    padding-top: 3em;
     font-size: 1.3em;
+}
+
+.card-text {
+    color: #393F4A;
 }
 
 .imgCarousel {
@@ -71,6 +110,11 @@ p {
 @font-face {
     font-family: 'jura-variablefont_wght';
     src: url('../fonts/jura-variablefont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'playwriteustrad-variablefont_wght';
+    src: url('../fonts/playwriteustrad-variablefont_wght.ttf') format('truetype');
 }
 
 
