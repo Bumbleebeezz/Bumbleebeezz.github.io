@@ -2,13 +2,24 @@
 
 header, footer {
     background-color: #393F4A;
-    
 }
 
 p {
     font-family: 'jura-variablefont_wght', sans-serif;
     color : white;
     padding : 0.5em;
+}
+
+.aboutMeDiv {
+    height: 90vh;
+    padding-top: 15em;
+    padding-left: 5em;
+    padding-right: 5em;
+    background-color: #393F4A;
+}
+.brand {
+    color: white;
+    font-size: 1.6em;
 }
 
 .btn {
@@ -44,6 +55,7 @@ p {
 }
 .card-text {
     font-size: 1.5em;
+    color: #393F4A;
 }
 .connectIcon {
     width: 2rem;
@@ -53,18 +65,49 @@ p {
     
 }
 
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    padding: 15px;
+    gap: 5px;
+}
+.flex-container > div {
+    border-radius: 5px;
+    padding: 8px;
+}
+
 .main, .mainBody {
     padding-top: 5em;
     padding-bottom: 5em;
 }
-
-.brand{
-    color : white;
-    font-size : 1.6em;
+.mainHeaderText {
+    /* flex:0 1 auto; */
+    align-self: center;
 }
+
 .nav-menu-item {
     color: white;
     font-size: 1em;
+}
+
+.profilImg {
+    width : 20vw;
+}
+.profilName {
+    font-family: 'jura-variablefont_wght', sans-serif;
+    font-size: 3em;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.profilTitle {
+    font-size: 1.5em;
+    padding-top: 0;
+    font-weight: bold;
+}
+.profilInfo {
+    font-size: 1.5em;
+    padding-top: 2em;
 }
 
 .welcomeHeader {
@@ -78,35 +121,7 @@ p {
     font-size: 1.3em;
 }
 
-.card-text {
-    color: #393F4A;
-}
 
-.imgCarousel {
-    width: 30vw;
-}
-.carouselImg{
-    width : 100%;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
-    padding: 15px;
-    gap: 5px;
-}
-
-.flex-container > div {
-    border-radius: 5px;
-    padding: 8px;
-}
-
-
-.mainHeaderText {
-    /* flex:0 1 auto; */
-    align-self: center;
-}
 
 @font-face {
     font-family: 'jura-variablefont_wght';
