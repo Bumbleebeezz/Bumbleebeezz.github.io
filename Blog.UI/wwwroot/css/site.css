@@ -50,7 +50,7 @@ strong {
     align-self: center;
 }
 .card-title {
-    font-family: 'playwriteustrad-variablefont_wght', sans-serif;
+    font-family: 'vt323-regular', sans-serif;
     font-size: 1.7em;
 }
 .card-title:hover {
@@ -89,9 +89,18 @@ strong {
     align-self: center;
 }
 
+.navLink {
+    font-weight : bold;
+}
+.navLink:hover {
+    text-decoration: underline 3px #D27D2D;
+}
 .nav-menu-item {
     color: white;
     font-size: 1em;
+}
+.navmenu {
+    gap: 20px;
 }
 
 .profilImg {
@@ -138,5 +147,17 @@ strong {
     src: url('../fonts/playwriteustrad-variablefont_wght.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'caveat-variablefont_wght';
+    src: url('../fonts/caveat-variablefont_wght.ttf') format('truetype');
+}
 
-       
+@font-face {
+    font-family: 'permanentmarker-regular';
+    src: url('../fonts/permanentmarker-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'vt323-regular';
+    src: url('../fonts/vt323-regular.ttf') format('truetype');
+}    

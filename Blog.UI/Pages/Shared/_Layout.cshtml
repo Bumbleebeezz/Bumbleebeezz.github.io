@@ -15,14 +15,14 @@
     <header class="pt-3">
         <div class="d-flex flex-row justify-content-around align-items-center">
             <div>
-                <a class="navbar-brand" asp-area="" asp-page="/Index"><p class="brand" style="font-weight: bold;">BuzzerBee´s Collection</p></a>
+                <div class="d-flex flex-row align-items-center navmenu">
+                    <a class="navbar-brand" asp-area="" asp-page="/Index"><p class="brand" style="font-weight: bold;">BuzzerBee´s Collection</p></a>
+                    <a class="navbar-brand" asp-area="" asp-page="/Recipies"><p class="navLink">RECIPIES</p></a>
+                    <a class="navbar-brand" asp-area="" asp-page="/Photografy"><p class="navLink">PHOTOGRAFY</p></a>
+                    <a class="navbar-brand" asp-area="" asp-page="/DoItYourself"><p class="navLink">DO IT YOURSELF</p></a>
+                </div>
+                
             </div>
-            <div class="d-flex flex-row">
-                <p>Recipies</p>
-                <p>Photografy</p>
-                <p>Do It Yourself</p>
-            </div>
-            
             <div>
                 <a class="nav-link btn" asp-area="" asp-page="/About">About me</a>
             </div>
@@ -42,7 +42,6 @@
                 <a href="https://www.linkedin.com/in/maria-edstr%C3%B6m-6b2215178/"><img class="connectIcon" style="width: 1.6rem;" src="icons/linkedin.png" /></a>
                 <a href="https://www.instagram.com/studio_buzzer?igsh=d2F6cHE4NDdnMW5n"><img class="connectIcon" src="icons/instagram.png" /></a>
                 <a href="https://github.com/Bumbleebeezz"><img class="connectIcon" style="width: 1.6rem;" src="icons/github.png" /></a>
-
             </p>
             <a class="nav-link btn" asp-area="" asp-page="/About">About me</a>
         </div>
