@@ -9,13 +9,16 @@ p {
     color : white;
     padding : 0.5em;
 }
+strong {
+    color: #D27D2D;
+}
 
 .aboutMeDiv {
-    height: 90vh;
-    padding-top: 15em;
-    padding-left: 5em;
-    padding-right: 5em;
+    padding-top: 10em;
+    padding-left: 25em;
+    padding-right: 25em;
     background-color: #393F4A;
+    align-items : end;
 }
 .brand {
     color: white;
@@ -94,8 +97,10 @@ p {
 .profilImg {
     width : 20vw;
 }
+.profilHalfImg {
+    width: 12vw;
+}
 .profilName {
-    font-family: 'jura-variablefont_wght', sans-serif;
     font-size: 3em;
     padding-bottom: 0;
     padding-top: 0;
