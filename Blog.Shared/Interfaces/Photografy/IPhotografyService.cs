@@ -8,7 +8,7 @@ namespace Blog.Shared.Interfaces.Photografy
     {
         Task<IEnumerable<T>> GetAllPhotografiesAsync();
         Task<T> GetPhotografyByIdAsync(int id);
-        Task AddPhotografyAsync(PhotoDto photografy);
+        Task<T> AddPhotografyAsync(PhotoDto photografy);
         Task UpdatePhotografyAsync(PhotoDto photografy);
         Task DeletePhotografyAsync(int id);
         Task<IEnumerable<T>> SearchPhotografiesAsync(string searchTerm);

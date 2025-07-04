@@ -8,7 +8,7 @@ namespace Blog.Dataccess.Repositorys.Photografy
 {
     public class PhotografyRepository(BlogDbContext context) : IPhotografyService<Photo>
     {
-        public Task AddPhotografyAsync(PhotoDto photografy)
+        public Task<Photo> AddPhotografyAsync(PhotoDto photografy)
         {
             throw new NotImplementedException();
         }

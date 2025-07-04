@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog.Dataccess.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    [Migration("20250704130638_init")]
+    [Migration("20250704160059_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -109,6 +109,10 @@ namespace Blog.Dataccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("URL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

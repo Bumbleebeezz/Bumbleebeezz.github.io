@@ -7,7 +7,7 @@ namespace Blog.API.Services.Photografy
 {
     public class PhotografyService(PhotografyRepository photografyRepository) : IPhotografyService<Photo>
     {
-        public Task AddPhotografyAsync(PhotoDto photografy)
+        public Task<Photo> AddPhotografyAsync(PhotoDto photografy)
         {
             throw new NotImplementedException();
         }

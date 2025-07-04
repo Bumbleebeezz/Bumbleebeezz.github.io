@@ -12,11 +12,11 @@ namespace Blog.API.Controllers.DIY
         IDoItYourselfService doItYourselfService
         ) : Controller
     {
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<DoItYourselfDto>>> GetDIYs()
-        {
-            var diys = await doItYourselfService.GetAllDIYsAsync();
-            return Ok(diys);
-        }
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<DoItYourselfDto>>> GetDIYs()
+        //{
+        //    var diys = await doItYourselfService.GetAllDIYsAsync();
+        //    return Ok(diys);
+        //}
     }
 }
