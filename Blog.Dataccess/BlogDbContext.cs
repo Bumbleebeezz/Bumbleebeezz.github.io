@@ -15,9 +15,9 @@ namespace Blog.Dataccess
         public BlogDbContext() { }
         public BlogDbContext(DbContextOptions<BlogDbContext> options) : base(options) { }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    object value = optionsBuilder.UseSqlServer("Data Source=MARIACONFIG;Integrated Security=True;Initial Catalog=BlogDb;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            object value = optionsBuilder.UseSqlServer("Data Source=MARIACONFIG;Integrated Security=True;Initial Catalog=BlogDb;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        }
     }
 }

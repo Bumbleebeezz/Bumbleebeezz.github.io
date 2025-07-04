@@ -19,6 +19,7 @@ strong {
     padding-right: 25em;
     background-color: #393F4A;
     align-items : end;
+    max-height : 780px;
 }
 .brand {
     color: white;
@@ -103,11 +104,8 @@ strong {
     gap: 20px;
 }
 
-.profilImg {
-    width : 20vw;
-}
 .profilHalfImg {
-    width: 12vw;
+    width: 300px;
 }
 .profilName {
     font-size: 3em;
@@ -120,7 +118,6 @@ strong {
     font-weight: bold;
 }
 .profilInfo {
-    font-size: 1.5em;
     padding-top: 2em;
 }
 
