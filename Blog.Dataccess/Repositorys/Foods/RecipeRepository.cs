@@ -6,7 +6,7 @@ namespace Blog.Dataccess.Repositorys.Foods
 {
     public class RecipeRepository(BlogDbContext context) : IRecipeService<Recipe>
     {
-        public Task AddRecipeAsync(RecipeDto recipe)
+        public Task AddRecipeAsync(Recipe recipe)
         {
             throw new NotImplementedException();
         }
@@ -16,27 +16,27 @@ namespace Blog.Dataccess.Repositorys.Foods
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Recipe>> GetAllRecipesAsync()
+        public Task<IEnumerable<Recipe?>> GetAllRecipesAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Recipe> GetRecipeByIdAsync(int id)
+        public Task<Recipe?> GetRecipeByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Recipe>> GetRecipesByCategoryAsync(string category)
+        public Task<IEnumerable<Recipe?>> GetRecipesByCategoryAsync(string category)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Recipe>> SearchRecipesAsync(string searchRecipe)
+        public Task<IEnumerable<Recipe?>> SearchRecipesAsync(string searchRecipe)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateRecipeAsync(RecipeDto recipe)
+        public Task UpdateRecipeAsync(Recipe recipe)
         {
             throw new NotImplementedException();
         }

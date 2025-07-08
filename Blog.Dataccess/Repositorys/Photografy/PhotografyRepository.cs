@@ -1,16 +1,17 @@
 ﻿
 
+using Blog.Dataccess.Entities.Photografy;
 using Blog.Shared.DTOs.Photografy;
 using Blog.Shared.Interfaces.Photografy;
-using Microsoft.Graph.Models;
 
 namespace Blog.Dataccess.Repositorys.Photografy
 {
     public class PhotografyRepository(BlogDbContext context) : IPhotografyService<Photo>
     {
-        public Task<Photo> AddPhotografyAsync(PhotoDto photografy)
+        public async Task AddPhotografyAsync(Photo photografy)
         {
-            throw new NotImplementedException();
+            await context.Photos.AddAsync(photografy);
+            await context.SaveChangesAsync();
         }
 
         public Task DeletePhotografyAsync(int id)
@@ -18,22 +19,22 @@ namespace Blog.Dataccess.Repositorys.Photografy
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Photo>> GetAllPhotografiesAsync()
+        public Task<IEnumerable<Photo?>> GetAllPhotografiesAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Photo>> GetPhotografiesByCategoryAsync(string category)
+        public Task<IEnumerable<Photo?>> GetPhotografiesByCategoryAsync(string category)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Photo> GetPhotografyByIdAsync(int id)
+        public Task<Photo?> GetPhotografyByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Photo>> SearchPhotografiesAsync(string searchTerm)
+        public Task<IEnumerable<Photo?>> SearchPhotografiesAsync(string searchTerm)
         {
             throw new NotImplementedException();
         }

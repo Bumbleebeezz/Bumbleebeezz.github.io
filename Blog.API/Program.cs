@@ -1,3 +1,4 @@
+using Blog.API.Extensions;
 using Blog.Dataccess;
 using Blog.Dataccess.Repositorys.DIY;
 using Blog.Dataccess.Repositorys.Foods;
@@ -17,33 +18,36 @@ builder.Services.AddHttpClient("RestApi", client =>
     client.BaseAddress = new Uri(System.Environment.GetEnvironmentVariable("apiUrl") ?? "http://localhost:5089"); // locate to github location
 });
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
 
 builder.Services.AddScoped<DoItYourselfRepository>();
 builder.Services.AddScoped<RecipeRepository>();
 builder.Services.AddScoped<PhotografyRepository>();
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddEndpointsApiExplorer();
+//builder.Services.AddSwaggerGen();
 
-//builder.Services.AddScoped<IDoItYourselfService, DoItYourselfService>();
-//builder.Services.AddScoped<IRecipeService, RecipeService>();
-//builder.Services.AddScoped<IPhotografyService, PhotografyService>();
+
 
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
 
-// Configure the HTTP request pipeline.
+//// Configure the HTTP request pipeline.
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 
-app.MapControllers();
+//app.MapControllers();
+
+app.MapGet("/", () => "API is running!");
+app.MapPhotoEndpoints();
+app.MapRecipeEndpoints();
+app.MapDoItYourselfEndpoints();
 
 app.Run();

@@ -69,6 +69,28 @@ strong {
     
 }
 
+.filterMenu {
+    width: 380px;
+    height : 90vh;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    padding-top: 3em;
+    font-family: 'vt323-regular', sans-serif;
+}
+.filterMenuIcon {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    
+}
+.filterTitle {
+    color: #393F4A;
+    font-size: 2.5em;
+    margin: 0;
+    font-family: 'playwriteustrad-variablefont_wght', sans-serif;
+}
 .flex-container {
     display: flex;
     justify-content: space-around;
@@ -121,6 +143,18 @@ strong {
     padding-top: 2em;
 }
 
+.tagsTitle {
+    color: #393F4A;
+    font-size: 1.5em;
+    margin: 0;
+    font-weight : bold;
+}
+.tagBtn {
+    background-color: #D27D2D;
+    margin-bottom: 1em;
+    color: white;
+    width: 100%;
+}
 .welcomeHeader {
     font-size: 2em;
     margin-bottom: 0;

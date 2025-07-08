@@ -6,7 +6,7 @@ namespace Blog.Dataccess.Repositorys.DIY
 {
     public class DoItYourselfRepository(BlogDbContext context) : IDoItYourselfService<DoItYourself>
     {
-        public Task AddDIYAsync(DoItYourselfDto diy)
+        public Task AddDIYAsync(DoItYourself diy)
         {
             throw new NotImplementedException();
         }
@@ -16,22 +16,22 @@ namespace Blog.Dataccess.Repositorys.DIY
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<DoItYourself>> GetAllDIYsAsync()
+        public Task<List<DoItYourself?>> GetAllDIYsAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<DoItYourself> GetDIYByIdAsync(int id)
+        public Task<DoItYourself?> GetDIYByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<DoItYourself>> GetDIYsByCategoryAsync(string category)
+        public Task<IEnumerable<DoItYourself?>> GetDIYsByCategoryAsync(string category)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<DoItYourself>> SearchDIYsAsync(string searchDIY)
+        public Task<IEnumerable<DoItYourself?>> SearchDIYsAsync(string searchDIY)
         {
             throw new NotImplementedException();
         }
