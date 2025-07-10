@@ -9,7 +9,6 @@ namespace Blog.Shared.Interfaces.DIY
         Task AddDIYAsync(T diy);
         Task UpdateDIYAsync(DoItYourselfDto diy);
         Task DeleteDIYAsync(int id);
-        Task<IEnumerable<T?>> SearchDIYsAsync(string searchDIY);
         Task<IEnumerable<T?>> GetDIYsByCategoryAsync(string category);
     }
 }

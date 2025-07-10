@@ -9,7 +9,6 @@ namespace Blog.Shared.Interfaces.Photografy
         Task AddPhotografyAsync(T photografy);
         Task UpdatePhotografyAsync(PhotoDto photografy);
         Task DeletePhotografyAsync(int id);
-        Task<IEnumerable<T?>> SearchPhotografiesAsync(string searchTerm);
         Task<IEnumerable<T?>> GetPhotografiesByCategoryAsync(string category);
     }
 }

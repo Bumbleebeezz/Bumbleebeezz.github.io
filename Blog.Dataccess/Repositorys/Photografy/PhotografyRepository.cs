@@ -1,8 +1,8 @@
-﻿
-
-using Blog.Dataccess.Entities.Photografy;
+﻿using Blog.Dataccess.Entities.Photografy;
 using Blog.Shared.DTOs.Photografy;
 using Blog.Shared.Interfaces.Photografy;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Blog.Dataccess.Repositorys.Photografy
 {
@@ -14,34 +14,54 @@ namespace Blog.Dataccess.Repositorys.Photografy
             await context.SaveChangesAsync();
         }
 
-        public Task DeletePhotografyAsync(int id)
+        public async Task DeletePhotografyAsync(int id)
         {
-            throw new NotImplementedException();
+            var deletePhoto = await context.Photos.FindAsync(id);
+            if (deletePhoto is null)
+            {
+                throw new KeyNotFoundException($"Photo with ID {id} not found.");
+            }
+            context.Photos.Remove(deletePhoto);
+            await context.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<Photo?>> GetAllPhotografiesAsync()
+        public async Task<IEnumerable<Photo?>> GetAllPhotografiesAsync()
         {
-            throw new NotImplementedException();
+            return await context.Photos.ToListAsync();
         }
 
-        public Task<IEnumerable<Photo?>> GetPhotografiesByCategoryAsync(string category)
+        public async Task<IEnumerable<Photo?>> GetPhotografiesByCategoryAsync(string category)
         {
-            throw new NotImplementedException();
+            var photosByCategory = await context.Photos
+                .Where(p => p.Category.Equals(category))
+                .ToListAsync();
+            if (photosByCategory is null || !photosByCategory.Any())
+            {
+                throw new KeyNotFoundException($"Photos with category {category} not found.");
+            }
+            return photosByCategory;
         }
 
-        public Task<Photo?> GetPhotografyByIdAsync(int id)
+        public async Task<Photo?> GetPhotografyByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await context.Photos.FindAsync(id)
+                ?? throw new KeyNotFoundException($"Photo with ID {id} not found.");
         }
 
-        public Task<IEnumerable<Photo?>> SearchPhotografiesAsync(string searchTerm)
+        public async Task UpdatePhotografyAsync(PhotoDto photografy)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdatePhotografyAsync(PhotoDto photografy)
-        {
-            throw new NotImplementedException();
+            var updatePhoto = await context.Photos.FindAsync(photografy.Id);
+            if (updatePhoto is null)
+            {
+                throw new KeyNotFoundException($"Photo with ID {photografy.Id} not found.");
+            }
+            updatePhoto.Title = photografy.Title;
+            updatePhoto.URL = photografy.URL;
+            updatePhoto.Description = photografy.Description;
+            updatePhoto.Category = photografy.Category;
+            updatePhoto.DateTaken = photografy.DateTaken;
+            context.Photos.Update(updatePhoto);
+            await context.SaveChangesAsync();
         }
     }
 }

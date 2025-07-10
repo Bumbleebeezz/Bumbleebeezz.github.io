@@ -9,7 +9,6 @@ namespace Blog.Shared.Interfaces.Foods
         Task AddRecipeAsync(T recipe);
         Task UpdateRecipeAsync(T recipe);
         Task DeleteRecipeAsync(int id);
-        Task<IEnumerable<T?>> SearchRecipesAsync(string searchRecipe);
         Task<IEnumerable<T?>> GetRecipesByCategoryAsync(string category);
     }
 }
