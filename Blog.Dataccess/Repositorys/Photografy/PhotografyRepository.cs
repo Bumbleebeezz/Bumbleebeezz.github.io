@@ -19,7 +19,7 @@ namespace Blog.Dataccess.Repositorys.Photografy
             var deletePhoto = await context.Photos.FindAsync(id);
             if (deletePhoto is null)
             {
-                throw new KeyNotFoundException($"Photo with ID {id} not found.");
+                return;
             }
             context.Photos.Remove(deletePhoto);
             await context.SaveChangesAsync();
@@ -37,15 +37,19 @@ namespace Blog.Dataccess.Repositorys.Photografy
                 .ToListAsync();
             if (photosByCategory is null || !photosByCategory.Any())
             {
-                throw new KeyNotFoundException($"Photos with category {category} not found.");
+                return null;
             }
             return photosByCategory;
         }
 
         public async Task<Photo?> GetPhotografyByIdAsync(int id)
         {
-            return await context.Photos.FindAsync(id)
-                ?? throw new KeyNotFoundException($"Photo with ID {id} not found.");
+            var photo = await context.Photos.FindAsync(id);
+            if (photo is null)
+            {
+                return null;
+            }
+            return photo;
         }
 
         public async Task UpdatePhotografyAsync(PhotoDto photografy)
@@ -53,7 +57,7 @@ namespace Blog.Dataccess.Repositorys.Photografy
             var updatePhoto = await context.Photos.FindAsync(photografy.Id);
             if (updatePhoto is null)
             {
-                throw new KeyNotFoundException($"Photo with ID {photografy.Id} not found.");
+                return;
             }
             updatePhoto.Title = photografy.Title;
             updatePhoto.URL = photografy.URL;

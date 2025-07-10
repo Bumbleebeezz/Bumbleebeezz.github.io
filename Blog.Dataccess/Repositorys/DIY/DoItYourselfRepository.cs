@@ -2,6 +2,7 @@
 using Blog.Dataccess.Entities.DIY;
 using Blog.Shared.DTOs.DIY;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 
 namespace Blog.Dataccess.Repositorys.DIY
@@ -19,7 +20,7 @@ namespace Blog.Dataccess.Repositorys.DIY
             var deleteDIY = await context.DIYs.FindAsync(id);
             if (deleteDIY is null)
             {
-                throw new KeyNotFoundException($"DIY with ID {id} not found.");
+                return;
             }
             context.DIYs.Remove(deleteDIY);
             await context.SaveChangesAsync();
@@ -32,8 +33,12 @@ namespace Blog.Dataccess.Repositorys.DIY
 
         public async Task<DoItYourself?> GetDIYByIdAsync(int id)
         {
-            return await context.DIYs.FindAsync(id)
-                ?? throw new KeyNotFoundException($"DIY with ID {id} not found.");
+            var diy = await context.DIYs.FindAsync(id);
+            if (diy is null)
+            {
+                return null;
+            }
+            return diy;
         }
 
         public async Task<IEnumerable<DoItYourself?>> GetDIYsByCategoryAsync(string category)
@@ -43,7 +48,7 @@ namespace Blog.Dataccess.Repositorys.DIY
                 .ToListAsync();
             if (diyByCategory is null || !diyByCategory.Any())
             {
-                throw new KeyNotFoundException($"DIYs with category {category} not found.");
+                return null;
             }
             return diyByCategory;
         }
@@ -53,7 +58,7 @@ namespace Blog.Dataccess.Repositorys.DIY
             var updateDIY = await context.DIYs.FindAsync(diy.Id);
             if (updateDIY is null)
             {
-                throw new KeyNotFoundException($"DIY with ID {diy.Id} not found.");
+                return;
             }
             updateDIY.Name = diy.Name;
             updateDIY.Description = diy.Description;

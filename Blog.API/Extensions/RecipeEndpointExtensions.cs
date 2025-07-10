@@ -10,13 +10,17 @@ namespace Blog.API.Extensions
             app.MapGet("/api/recipes", async (RecipeRepository repo) =>
             {
                 var recipes = await repo.GetAllRecipesAsync();
+                if (recipes is null || !recipes.Any())
+                {
+                    return Results.NotFound("No recipes found");
+                }
                 return Results.Ok(recipes);
             });
 
             app.MapGet("/api/recipes/{id:int}", async (int id, RecipeRepository repo) =>
             {
                 var recipe = await repo.GetRecipeByIdAsync(id);
-                return recipe is not null ? Results.Ok(recipe) : Results.NotFound();
+                return recipe is null ? Results.NotFound($"Recipe with ID {id} was not found") : Results.Ok(recipe);
             });
 
             app.MapGet("/recipes/search/{category}", async (RecipeRepository repo, string category) =>
@@ -29,13 +33,13 @@ namespace Blog.API.Extensions
                 return Results.Ok(recipes);
             });
 
-            app.MapPut("/api/recipes", async (Recipe recipe, RecipeRepository repo) =>
+            app.MapPost("/api/recipes", async (Recipe recipe, RecipeRepository repo) =>
             {
                 await repo.AddRecipeAsync(recipe);
-                return Results.NoContent();
+                return Results.Ok("Recipe successfully added!");
             });
 
-            app.MapPatch("/api/recipes/{id:int}", async (int id, Recipe recipe, RecipeRepository repo) =>
+            app.MapPut("/api/recipes/{id:int}", async (int id, Recipe recipe, RecipeRepository repo) =>
             {
                 var existingRecipe = await repo.GetRecipeByIdAsync(id);
                 if (existingRecipe is null)
@@ -54,7 +58,7 @@ namespace Blog.API.Extensions
                     return Results.NotFound($"Recipe with id {id} was not found");
                 }
                 await repo.DeleteRecipeAsync(id);
-                return Results.NoContent();
+                return Results.Ok("Recipe has successfully been removed");
             });
 
             return app;

@@ -13,22 +13,26 @@ namespace Blog.API.Extensions
             app.MapGet("/api/diy", async (DoItYourselfRepository repo) =>
             {
                 var diyItems = await repo.GetAllDIYsAsync();
+                if (diyItems is null || !diyItems.Any())
+                {
+                    return Results.NotFound("No DIY items found");
+                }
                 return Results.Ok(diyItems);
             });
 
             app.MapGet("/api/diy/{id:int}", async (int id, DoItYourselfRepository repo) =>
             {
                 var diyItem = await repo.GetDIYByIdAsync(id);
-                return diyItem is not null ? Results.Ok(diyItem) : Results.NotFound();
+                return diyItem is null ? Results.NotFound($"DIY with ID {id} was not found") : Results.Ok(diyItem);
             });
 
-            app.MapPut("/api/diy", async (DoItYourself diy, DoItYourselfRepository repo) =>
+            app.MapPost("/api/diy", async (DoItYourself diy, DoItYourselfRepository repo) =>
             {
                 await repo.AddDIYAsync(diy);
-                return Results.NoContent();
+                return Results.Ok("DIY successfully added!");
             });
 
-            app.MapPatch("/api/diy/{id:int}", async (int id, DoItYourselfDto diy, DoItYourselfRepository repo) =>
+            app.MapPut("/api/diy/{id:int}", async (int id, DoItYourselfDto diy, DoItYourselfRepository repo) =>
             {
                 var existingDIY = await repo.GetDIYByIdAsync(id);
                 if (existingDIY is null)
@@ -47,7 +51,7 @@ namespace Blog.API.Extensions
                     return Results.NotFound($"DIY with id {id} was not found");
                 }
                 await repo.DeleteDIYAsync(id);
-                return Results.NoContent();
+                return Results.Ok("DIY has successfully been removed");
             });
 
             return app;

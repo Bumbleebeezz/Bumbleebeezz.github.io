@@ -11,13 +11,17 @@ namespace Blog.API.Extensions
             app.MapGet("/api/photos", async (PhotografyRepository repo) =>
             {
                 var photos = await repo.GetAllPhotografiesAsync();
+                if (photos is null || !photos.Any())
+                {
+                    return Results.NotFound("No photos found");
+                }
                 return Results.Ok(photos);
             });
 
             app.MapGet("/api/photos/{id:int}", async (int id, PhotografyRepository repo) =>
             {
                 var photo = await repo.GetPhotografyByIdAsync(id);
-                return photo is not null ? Results.Ok(photo) : Results.NotFound();
+                return photo is null ? Results.NotFound($"Photo with ID {id} was not found") : Results.Ok(photo);
             });
 
             app.MapGet("/photos/search/{category}", async (PhotografyRepository repo, string category) =>
@@ -30,13 +34,13 @@ namespace Blog.API.Extensions
 
                 return Results.Ok(photos);
             });
-            app.MapPut("/api/photos", async (Photo photo, PhotografyRepository repo) =>
+            app.MapPost("/api/photos", async (Photo photo, PhotografyRepository repo) =>
             {
                 await repo.AddPhotografyAsync(photo);
-                return Results.NoContent();
+                return Results.Ok("Photo successfully added!");
             });
 
-            app.MapPatch("/api/photos/{id:int}", async (int id, PhotoDto photoDto, PhotografyRepository repo) =>
+            app.MapPut("/api/photos/{id:int}", async (int id, PhotoDto photoDto, PhotografyRepository repo) =>
             {
                 var existingPhoto = await repo.GetPhotografyByIdAsync(id);
                 if (existingPhoto is null)
@@ -55,7 +59,7 @@ namespace Blog.API.Extensions
                     return Results.NotFound($"Photo with id {id} was not found");
                 }
                 await repo.DeletePhotografyAsync(id);
-                return Results.NoContent();
+                return Results.Ok("Photo has successfully been removed");
             });
 
             return app;

@@ -18,7 +18,7 @@ namespace Blog.Dataccess.Repositorys.Foods
             var deleteRecipe = await context.Recipes.FindAsync(id);
             if (deleteRecipe is null)
             {
-                throw new KeyNotFoundException($"Recipe with ID {id} not found.");
+                return;
             }
             context.Recipes.Remove(deleteRecipe);
             await context.SaveChangesAsync();
@@ -31,8 +31,12 @@ namespace Blog.Dataccess.Repositorys.Foods
 
         public async Task<Recipe?> GetRecipeByIdAsync(int id)
         {
-            return await context.Recipes.FindAsync(id)
-                ?? throw new KeyNotFoundException($"Recipe with ID {id} not found.");
+            var recipe = await context.Recipes.FindAsync(id);
+            if (recipe is null)
+            {
+                return null;
+            }
+            return await context.Recipes.FindAsync(id);
         }
 
         public async Task<IEnumerable<Recipe?>> GetRecipesByCategoryAsync(string category)
@@ -42,7 +46,7 @@ namespace Blog.Dataccess.Repositorys.Foods
                 .ToListAsync();
             if (recipesByCategory is null || !recipesByCategory.Any())
             {
-                throw new KeyNotFoundException($"No recipes found for category {category}.");
+                return null;
             }
             return recipesByCategory;
         }
@@ -53,7 +57,7 @@ namespace Blog.Dataccess.Repositorys.Foods
             var updateRecipe = await context.Recipes.FindAsync(recipe.Id);
             if (updateRecipe is null)
             {
-                throw new KeyNotFoundException($"Recipe with ID {recipe.Id} not found.");
+                return;
             }
             updateRecipe.Name = recipe.Name;
             updateRecipe.Description = recipe.Description;
