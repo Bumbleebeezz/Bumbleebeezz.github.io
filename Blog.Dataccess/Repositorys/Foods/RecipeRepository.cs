@@ -26,7 +26,12 @@ namespace Blog.Dataccess.Repositorys.Foods
 
         public async Task<IEnumerable<Recipe?>> GetAllRecipesAsync()
         {
-            return await context.Recipes.ToListAsync();
+            var allRecipes = await context.Recipes.ToListAsync();
+            if (allRecipes is null || !allRecipes.Any())
+            {
+                return null;
+            }
+            return allRecipes;
         }
 
         public async Task<Recipe?> GetRecipeByIdAsync(int id)
@@ -59,7 +64,7 @@ namespace Blog.Dataccess.Repositorys.Foods
             {
                 return;
             }
-            updateRecipe.Name = recipe.Name;
+            updateRecipe.Title = recipe.Title;
             updateRecipe.Description = recipe.Description;
             updateRecipe.Category = recipe.Category;
             updateRecipe.Ingredients = recipe.Ingredients;

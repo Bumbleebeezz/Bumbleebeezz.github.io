@@ -1,6 +1,7 @@
 ﻿@page
 @model Blog.UI.Pages.RecipiesModel
 @{
+   
 }
 
 
@@ -13,13 +14,12 @@
         <div class="tagsList border-bottom pb-4">
             <p class="tagsTitle">Tags</p>
             <button class="btn active tagBtn">Show all</button>
-            <button class="btn tagBtn">Bread</button>
-            <button class="btn tagBtn">Cake</button>
-            <button class="btn tagBtn">.</button>
-            <button class="btn tagBtn">.</button>
-            <button class="btn tagBtn">.</button>
-            <button class="btn tagBtn">.</button>
+            @foreach (var recipe in Model.DbRecipes)
+            {
+            <button class="btn tagBtn"><p></p></button>
+            }
         </div>
     </div>
     
 </div>
+

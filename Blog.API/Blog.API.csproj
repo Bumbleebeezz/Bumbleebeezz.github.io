@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Blog.Dataccess\Blog.Dataccess.csproj" />
     <ProjectReference Include="..\Blog.Shared\Blog.Shared.csproj" />
+    <ProjectReference Include="..\Blog.UI\Blog.UI.csproj" />
   </ItemGroup>
 
 </Project>

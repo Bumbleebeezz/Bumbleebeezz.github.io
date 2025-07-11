@@ -28,7 +28,12 @@ namespace Blog.Dataccess.Repositorys.DIY
 
         public async Task<List<DoItYourself?>> GetAllDIYsAsync()
         {
-            return await context.DIYs.ToListAsync();
+            var allDIYs = await context.DIYs.ToListAsync();
+            if (allDIYs is null || !allDIYs.Any())
+            {
+                return null;
+            }
+            return allDIYs;
         }
 
         public async Task<DoItYourself?> GetDIYByIdAsync(int id)
@@ -60,7 +65,7 @@ namespace Blog.Dataccess.Repositorys.DIY
             {
                 return;
             }
-            updateDIY.Name = diy.Name;
+            updateDIY.Title = diy.Title;
             updateDIY.Description = diy.Description;
             updateDIY.Category = diy.Category;
             updateDIY.Components = diy.Components;

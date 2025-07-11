@@ -27,7 +27,12 @@ namespace Blog.Dataccess.Repositorys.Photografy
 
         public async Task<IEnumerable<Photo?>> GetAllPhotografiesAsync()
         {
-            return await context.Photos.ToListAsync();
+            var allPhotos = await context.Photos.ToListAsync();
+            if (allPhotos is null || !allPhotos.Any())
+            {
+                return null;
+            }
+            return allPhotos;
         }
 
         public async Task<IEnumerable<Photo?>> GetPhotografiesByCategoryAsync(string category)
