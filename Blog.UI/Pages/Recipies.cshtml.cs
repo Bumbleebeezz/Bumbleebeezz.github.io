@@ -2,19 +2,33 @@ using Blog.Dataccess.Entities.Foods;
 using Blog.Shared.DTOs.Foods;
 using Blog.Shared.Interfaces.Foods;
 using Blog.UI.Services;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Blog.UI.Pages
 {
-    public class RecipiesModel(IRecipeService<Recipe> recipeService) : PageModel
+    public class RecipiesModel : PageModel
     {
-        public void OnGet(){}
-
-        public List<Recipe> DbRecipes { get; set; } = new List<Recipe>();
-        public async void OnGetAsync()
+        private readonly RecipeService _recipeService;
+        private readonly ILogger<RecipiesModel> _logger;
+        public RecipiesModel(RecipeService recipeService, ILogger<RecipiesModel> logger)
         {
-            DbRecipes.AddRange(await recipeService.GetAllRecipesAsync());
+            _recipeService = recipeService;
+            _logger = logger;
+        }
+
+        public List<RecipeDto> Recipes { get; set; } = new List<RecipeDto>();
+
+        public async void OnGet()
+        {
+            try
+            {
+                Recipes = (await _recipeService.GetAllRecipesAsync()).ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to fetch recipes");
+                // Handle the error appropriately, e.g., show an error message to the user
+            }
         }
     }
 }

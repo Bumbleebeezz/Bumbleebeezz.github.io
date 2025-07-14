@@ -5,6 +5,7 @@ using Blog.Dataccess.Repositorys.DIY;
 using Blog.Dataccess.Repositorys.Foods;
 using Blog.Dataccess.Repositorys.Photografy;
 using Blog.Shared.Interfaces.Foods;
+using Blog.UI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +25,8 @@ builder.Services.AddHttpClient("RestApi", client =>
 builder.Services.AddScoped<DoItYourselfRepository>();
 builder.Services.AddScoped<RecipeRepository>();
 builder.Services.AddScoped<PhotografyRepository>();
+
+
 
 var app = builder.Build();
 

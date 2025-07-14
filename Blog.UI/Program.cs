@@ -1,7 +1,28 @@
+using Blog.Shared.DTOs.DIY;
+using Blog.Shared.DTOs.Foods;
+using Blog.Shared.DTOs.Photografy;
+using Blog.Shared.Interfaces.DIY;
+using Blog.Shared.Interfaces.Foods;
+using Blog.Shared.Interfaces.Photografy;
+using Blog.UI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
+
 builder.Services.AddRazorPages();
+
+builder.Services.AddHttpClient("RestApi", client =>
+{
+    client.BaseAddress = new Uri(System.Environment.GetEnvironmentVariable("apiUrl") ?? "http://localhost:5089");
+});
+
+builder.Services.AddScoped<RecipeService>();
+builder.Services.AddScoped<PhotografyService>();
+builder.Services.AddScoped<DoItYourselfService>();
+
 
 var app = builder.Build();
 
@@ -15,11 +36,20 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseRouting();
+app.UseStaticFiles();
+app.UseAntiforgery();
 
-app.UseAuthorization();
 
-app.MapStaticAssets();
+
+
+//app.UseHttpsRedirection();
+
+//app.UseRouting();
+
+//app.UseAuthorization();
+
+//app.MapStaticAssets();
+
 app.MapRazorPages()
    .WithStaticAssets();
 

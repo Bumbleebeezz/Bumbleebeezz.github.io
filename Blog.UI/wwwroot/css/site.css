@@ -42,11 +42,13 @@ strong {
     font-weight: bold;
 }
 
-.card{
-    border: none;
+.card {
+    border: 3px solid #f5f3f4;
+    border-radius: 20px;
+    width: 20%;
 }
 .cardIcon{
-    width: 18rem;
+    
     justify-self : center;
     align-self: center;
 }
@@ -143,11 +145,16 @@ strong {
     padding-top: 2em;
 }
 
+.recipeImg {
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+
 .tagsTitle {
     color: #393F4A;
     font-size: 1.5em;
     margin: 0;
-    font-weight : bold;
+    font-weight: bold;
 }
 .tagBtn {
     background-color: #D27D2D;

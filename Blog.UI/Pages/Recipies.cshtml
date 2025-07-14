@@ -1,25 +1,44 @@
 ﻿@page
 @model Blog.UI.Pages.RecipiesModel
 @{
-   
+
 }
 
 
-<div class="d-flex flex-row justify-content-between">
+<div class="d-flex flex-row">
     <div class="filterMenu border-end">
         <div class="d-flex flex-row border-bottom">
             <img class="filterMenuIcon" src="icons/filter.png" />
             <p class="filterTitle">Filter</p>
         </div>
         <div class="tagsList border-bottom pb-4">
-            <p class="tagsTitle">Tags</p>
+            <p class="tagsTitle">Categories</p>
             <button class="btn active tagBtn">Show all</button>
-            @foreach (var recipe in Model.DbRecipes)
+            @* @foreach ()
             {
-            <button class="btn tagBtn"><p></p></button>
-            }
+                
+            } *@
         </div>
     </div>
-    
+    <div class="recipeList p-5"> 
+        <div class="d-flex justify-content-around">
+        @foreach (var recipies in Model.Recipes)
+        {
+            <div class="card">
+                <img class="card-img-top recipeImg" src="images/cj5a0842.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@recipies.Title</h5>
+                    <p class="card-text">@recipies.Description</p>
+                    <a href="#" class="btn">Go somewhere</a>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
 </div>
+
+
+
+
+
 
