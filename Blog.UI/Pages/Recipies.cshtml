@@ -20,16 +20,20 @@
             } *@
         </div>
     </div>
-    <div class="recipeList p-5"> 
-        <div class="d-flex justify-content-around">
+    <div class="recipeList"> 
+        <div class="d-flex justify-content-center flex-wrap">
         @foreach (var recipies in Model.Recipes)
         {
             <div class="card">
                 <img class="card-img-top recipeImg" src="images/cj5a0842.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">@recipies.Title</h5>
+                        <button type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0" />
+                            </svg>
+                            @recipies.Title
+                        </button>
                     <p class="card-text">@recipies.Description</p>
-                    <a href="#" class="btn">Go somewhere</a>
                 </div>
             </div>
         }
@@ -39,6 +43,22 @@
 
 
 
-
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
