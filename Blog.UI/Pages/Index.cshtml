@@ -14,18 +14,46 @@
                 Hello World !
             </p>
             <p class="welcomeHeader">
-                To my little corner of the universe that is internet
+                Jump into 3 unique collections full of recipes, stunning photos, and creative DIYs!
             </p>
         </div>
-
     </div>
 </header>
 
-<body>
-    <div class="mainBody d-flex justify-content-evenly  m-0">
+<body class="mb-5">
+    <div class="d-flex justify-content-evenly mainBody">
         <a class="navbar-brand" asp-area="" asp-page="/Recipies"><img class="navIcon" src="icons/chef-hat.png" alt="RecipeIcon"></a>
         <a class="navbar-brand" asp-area="" asp-page="/Photografy"><img class="navIcon" src="icons/camera.png" alt="PhotografyIcon"></a>
         <a class="navbar-brand" asp-area="" asp-page="/DoItYourself"><img class="navIcon" src="icons/diy.png" alt="DiyIcon"></a>
+    </div>
+    <div class="newsDiv d-flex flex-column">
+        <p class="newsTitle">NEWS !</p>
+        <div class="newsPost d-flex justify-content-start">
+            <img class="newsImg" src="images/f6ab3467-0bf8-4c2f-921f-6c933fbd164a.jpg" />
+            <div class="d-flex flex-column" style="width: 80vw;">
+                <p class="newsPostTitle">News title</p>
+                <p class="newsText">
+                    Exciting News: Local Creators Launch Inspiring Online Platform for Recipes, Photography & DIYs
+
+                    A group of passionate creators has just launched a beautifully curated online platform that brings together three inspiring collections of content: delicious recipes, stunning photography, and creative DIY projects. Designed to spark imagination and encourage hands-on living, the platform showcases seasonal dishes, visual storytelling through photos, and step-by-step tutorials for home and craft projects.
+                </p>
+                <a class="navbar-brand btn newsBtn text-center" asp-area="" asp-page="/Recipies">Explore !</a>
+            </div>
+        </div>
+    </div>
+    <div class="newsDiv d-flex flex-column pb-5">
+        <div class="newsPost d-flex justify-content-start">
+            <img class="newsImg" src="images/f6ab3467-0bf8-4c2f-921f-6c933fbd164a.jpg" />
+            <div class="d-flex flex-column" style="width: 80vw;">
+                <p class="newsPostTitle">News title</p>
+                <p class="newsText">
+                    Exciting News: Local Creators Launch Inspiring Online Platform for Recipes, Photography & DIYs
+
+                    A group of passionate creators has just launched a beautifully curated online platform that brings together three inspiring collections of content: delicious recipes, stunning photography, and creative DIY projects. Designed to spark imagination and encourage hands-on living, the platform showcases seasonal dishes, visual storytelling through photos, and step-by-step tutorials for home and craft projects.
+                </p>
+                <a class="navbar-brand btn newsBtn" asp-area="" asp-page="/Recipies" style="margin-left: 3em;">Explore !</a>
+            </div>
+        </div>
     </div>
 </body>
 

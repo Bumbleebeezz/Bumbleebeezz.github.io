@@ -59,13 +59,15 @@ strong {
     font-size: 1.5em;
     color: #393F4A;
 }
-
 .connectIcon {
-    width: 2rem;
-    margin-left : 1em;
+    width: 2.5rem;
+    margin-left: 1em;
+    transition: all 0.2s ease-in-out;
+    border-radius : 50%;
 }
 .connectIcon:hover {
-    
+    color: #393F4A;
+    box-shadow: 0 0 10px;
 }
 
 .filterMenu {
@@ -102,9 +104,13 @@ strong {
     padding: 8px;
 }
 
-
-.main, .mainBody {
+.main {
     padding: 5em;
+}
+.mainBody {
+    padding: 5em;
+    padding-top: 8em;
+    padding-bottom: 8em;
 }
 .mainHeaderText {
     align-self: center;
@@ -148,6 +154,48 @@ strong {
     color: #D27D2D;
     box-shadow: 0 0 100px;
 }
+.newsDiv {
+    background-color: #393F4A;
+   
+}
+.newsTitle {
+    font-size: 3em;
+    padding-left: 16%;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 2em;
+    font-weight: bold;
+    background-color: #D27D2D;
+    color: #393F4A;
+}
+.newsPostTitle {
+    margin: 0;
+    margin-left: 4%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.newsText {
+    margin-left: 4.5%;
+    padding-right: 20%;
+}
+.newsPost {
+    margin: 0;
+    margin-left: 16%;
+    font-size: 1.5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.newsImg {
+    width: 25%;
+    height: 25%;
+    border-radius: 10px;
+}
+.newsBtn {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    margin-left: 3.5em;
+}
 
 .profilHalfImg {
     width: 300px;
@@ -183,11 +231,13 @@ strong {
     color: white;
     width: 100%;
 }
+
 .welcomeHeader {
     font-size: 2em;
     margin-bottom: 0;
     padding-bottom: 0;
     padding-top: 0;
+
 }
 .welcomeBody {
     padding-top: 3em;
