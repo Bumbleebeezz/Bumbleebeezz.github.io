@@ -10,7 +10,7 @@ p {
     padding : 0.5em;
 }
 strong {
-    color: #D27D2D;
+    padding-right:1em;
 }
 
 .aboutMeDiv {
@@ -102,24 +102,24 @@ strong {
     padding: 8px;
 }
 
-.homepageCard{
-    border: none;
-    width : 18em;
-}
 
 .main, .mainBody {
-    padding-top: 5em;
-    padding-bottom: 5em;
+    padding: 5em;
 }
 .mainHeaderText {
     align-self: center;
+}
+.mainNavText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size : 1.5em;
 }
 .modalBtn {
     background-color: transparent;
     color: #393F4A;
     font-size: 1.5em;
     width: 100%;
-    
 }
 .modalBtn :hover {
     color: #D27D2D;
@@ -138,6 +138,15 @@ strong {
 }
 .navmenu {
     gap: 20px;
+}
+.navIcon {
+    width: 18em;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+.navIcon:hover {
+    color: #D27D2D;
+    box-shadow: 0 0 100px;
 }
 
 .profilHalfImg {

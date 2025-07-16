@@ -16,35 +16,16 @@
             <p class="welcomeHeader">
                 To my little corner of the universe that is internet
             </p>
-            
         </div>
 
     </div>
 </header>
 
 <body>
-    <div class="mainBody d-flex justify-content-evenly text-center m-0">
-        <div class="card homepageCard">
-            <img class="card-img-top cardIcon" src="icons/cook-hat.png" alt="Card image cap">
-            <div class="card-body">
-                <p class="card-title">Recepies</p>
-                <p class="card-text">...</p>
-            </div>
-        </div>
-        <div class="card homepageCard">
-            <img class="card-img-top cardIcon" src="icons/camera.png" alt="Card image cap">
-            <div class="card-body">
-                <p class="card-title">Photografy</p>
-                <p class="card-text">...</p>
-            </div>
-        </div>
-        <div class="card homepageCard">
-            <img class="card-img-top cardIcon" src="icons/diy.png" alt="Card image cap">
-            <div class="card-body">
-                <p class="card-title">Do It Yourself</p>
-                <p class="card-text">...</p>
-            </div>
-        </div>
+    <div class="mainBody d-flex justify-content-evenly  m-0">
+        <a class="navbar-brand" asp-area="" asp-page="/Recipies"><img class="navIcon" src="icons/chef-hat.png" alt="RecipeIcon"></a>
+        <a class="navbar-brand" asp-area="" asp-page="/Photografy"><img class="navIcon" src="icons/camera.png" alt="PhotografyIcon"></a>
+        <a class="navbar-brand" asp-area="" asp-page="/DoItYourself"><img class="navIcon" src="icons/diy.png" alt="DiyIcon"></a>
     </div>
 </body>
 
