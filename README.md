@@ -1,6 +1,22 @@
 ## RECIPIES
 
 {
+  "Title": "Chocolate balls",
+  "Description": "Fast and easy cookies",
+  "Category": ["Cookies", "Chocolate"],
+  "Ingredients": [
+    "250g butter",
+    "250g oats",
+    "250g sugar",
+    "1 double espresso",
+    "4g vanilla sugar",
+    "25g cocoa",
+    "Chocolate for coating",
+    "Coconut flakes and/or pearl sugar"
+  ],
+  "Instructions": "Mix all ingredients in a bowl until combined. Form the balls and put in the fridge to chill. Dip the balls in melted chocolate and cover with coconut flakes and/or pearl sugar"
+}
+{
   "Title": "Cake base",
   "Description": "Simple cake base that works for most occasions",
   "Category": ["Cake"],
