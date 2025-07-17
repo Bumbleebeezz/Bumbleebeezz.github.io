@@ -14,46 +14,58 @@
         <div class="tagsList border-bottom pb-4">
             <p class="tagsTitle">Categories</p>
             <button class="btn active tagBtn">Show all</button>
-            @foreach (var recipies in Model.Recipes)
+            @if (Model.Recipes is null || !Model.Recipes.Any())
             {
-                @foreach (var category in recipies.Category)
+                <div class="alert warning">
+                    <strong>Apology!</strong>
+                    <br />
+                    This page is under construction
+                    <br />
+                    Please come back later
+                </div>
+            }
+            else
+            {
+                @foreach (var category in Model.Categories)
                 {
                     <button class="btn tagBtn">@category</button>
-                }
-            } 
+                } 
+            }
         </div>
     </div>
     <div class="recipeList"> 
         <div class="d-flex justify-content-center flex-wrap">
-        @foreach (var recipies in Model.Recipes)
-        {
-            <div class="card">
-                <img class="card-img-top recipeImg" src="images/cj5a0842.jpg" alt="Card image cap">
-                <div class="card-body p-0">
-                    <button type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <p class="card-title">@recipies.Title</p>
-                    </button>
-                    <p class="card-text">@recipies.Description</p>
+            
+            @foreach (var recipies in Model.Recipes)
+            {
+                <div class="card">
+                    <img class="card-img-top recipeImg" src="images/cj5a0842.jpg" alt="Card image cap">
+                    <div class="card-body p-0">
+                        <button type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <p class="card-title">@recipies.Title</p>
+                        </button>
+                        <p class="card-text">@recipies.Description</p>
+                    </div>
                 </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="staticBackdropLabel">@recipies.Title</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
+            
         </div>
     </div>
 </div>

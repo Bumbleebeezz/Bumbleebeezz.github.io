@@ -3,6 +3,7 @@ using Blog.Shared.DTOs.Foods;
 using Blog.Shared.Interfaces.Foods;
 using Blog.UI.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel;
 
 namespace Blog.UI.Pages
 {
@@ -16,13 +17,27 @@ namespace Blog.UI.Pages
             _logger = logger;
         }
 
-        public List<RecipeDto> Recipes { get; set; } = new List<RecipeDto>();
+        public List<RecipeDto> Recipes { get; set; } = new();
+        public List<string> Categories { get; set; } = new();
 
         public async void OnGet()
         {
             try
             {
                 Recipes = (await _recipeService.GetAllRecipesAsync()).ToList();
+                foreach (var recipe in Recipes)
+                {
+                    foreach(var category in recipe.Category)
+                    {
+                        if (Categories.Contains(category)) {
+                            continue;
+                        }
+                        else
+                        {
+                            Categories.Add(category);
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {

@@ -13,6 +13,12 @@ strong {
     padding-right:1em;
 }
 
+.alert.warning {
+    background-color: #ff9800;
+    color: #393F4A;
+    font-family: 'jura-variablefont_wght', sans-serif;
+    font-size : 1.2em;
+}
 .aboutMeDiv {
     padding-top: 10em;
     padding-left: 25em;
@@ -21,11 +27,11 @@ strong {
     align-items : end;
     max-height : 780px;
 }
+
 .brand {
     color: white;
     font-size: 1.6em;
 }
-
 .btn {
     background-color: #D27D2D;
     width: 150px;
@@ -196,6 +202,7 @@ strong {
     margin: 0;
     margin-left: 3.5em;
 }
+
 
 .profilHalfImg {
     width: 300px;
