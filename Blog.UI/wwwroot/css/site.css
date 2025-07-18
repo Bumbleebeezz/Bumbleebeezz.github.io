@@ -13,11 +13,13 @@ strong {
     padding-right:1em;
 }
 
-.alert.warning {
-    background-color: #ff9800;
-    color: #393F4A;
-    font-family: 'jura-variablefont_wght', sans-serif;
-    font-size : 1.2em;
+.alert {
+    background-color: #2196F3;
+    font-size: 0.8vw;
+    margin: 0;
+    color: white;
+    border : none;
+    padding : 0;
 }
 .aboutMeDiv {
     padding-top: 10em;
@@ -30,16 +32,17 @@ strong {
 
 .brand {
     color: white;
-    font-size: 1.6em;
+    font-size: 1.1vw;
 }
 .btn {
     background-color: #D27D2D;
-    width: 150px;
+    width: 5.5vw;
     border-radius: 50px;
     color: #393F4A;
     font-family: 'jura-variablefont_wght', sans-serif;
     font-weight: bold;
-    padding: 0.3em;
+    padding: 0.2vw;
+    font-size : 0.6vw;
 }
 .btn:hover {
     background-color: white;
@@ -66,7 +69,7 @@ strong {
     color: #393F4A;
 }
 .connectIcon {
-    width: 2.5rem;
+    width: 1.5vw;
     margin-left: 1em;
     transition: all 0.2s ease-in-out;
     border-radius : 50%;
@@ -94,7 +97,7 @@ strong {
 }
 .filterTitle {
     color: #393F4A;
-    font-size: 2.5em;
+    font-size: 1.5vw;
     margin: 0;
     font-family: 'playwriteustrad-variablefont_wght', sans-serif;
 }
@@ -111,21 +114,25 @@ strong {
 }
 
 .main {
-    padding: 5em;
+    padding: 2vw;
+    padding-top: 4vw;
+    padding-bottom: 4vw;
 }
 .mainBody {
-    padding: 5em;
-    padding-top: 8em;
-    padding-bottom: 8em;
+    padding: 2vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
 }
 .mainHeaderText {
     align-self: center;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
 }
 .mainNavText {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size : 1.5em;
+    font-size : 1.5vw;
 }
 .modalBtn {
     background-color: transparent;
@@ -140,19 +147,19 @@ strong {
 
 .navLink {
     font-weight: bold;
+    font-size : 0.6vw;
 }
 .navLink:hover {
     text-decoration: underline 3px #D27D2D;
 }
 .nav-menu-item {
     color: white;
-    font-size: 1em;
 }
 .navmenu {
     gap: 20px;
 }
 .navIcon {
-    width: 18em;
+    width: 8vw;
     border-radius: 50%;
     transition: all 0.2s ease-in-out;
 }
@@ -162,11 +169,10 @@ strong {
 }
 .newsDiv {
     background-color: #393F4A;
-   
 }
 .newsTitle {
-    font-size: 3em;
-    padding-left: 16%;
+    font-size: 2vw;
+    padding-left: 15vw;
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 2em;
@@ -176,49 +182,52 @@ strong {
 }
 .newsPostTitle {
     margin: 0;
-    margin-left: 4%;
-    font-size: 1.5em;
+    margin-left: 1.6vw;
+    font-size: 1.5vw;
     font-weight: bold;
 }
 .newsText {
-    margin-left: 4.5%;
-    padding-right: 20%;
+    margin-left: 2vw;
+    padding-right: 15vw;
+    font-size: 1vw;
 }
 .newsPost {
     margin: 0;
-    margin-left: 16%;
-    font-size: 1.5em;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    margin-left: 15vw;
+    font-size: 1.5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
 }
 .newsImg {
-    width: 25%;
-    height: 25%;
-    border-radius: 10px;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 1vw;
+    padding-top: 1vw;
 }
-.newsBtn {
-    width: 50%;
+/*.newsBtn {
     padding: 0;
     margin: 0;
-    margin-left: 3.5em;
-}
+    margin-left: 3.3em;
+    font-size: 1vw;
+}*/
 
 
 .profilHalfImg {
-    width: 300px;
+    width: 10vw;
 }
 .profilName {
-    font-size: 3em;
+    font-size: 2vw;
     padding-bottom: 0;
     padding-top: 0;
 }
 .profilTitle {
-    font-size: 1.5em;
+    font-size: 1vw;
     padding-top: 0;
     font-weight: bold;
 }
 .profilInfo {
-    padding-top: 2em;
+    font-size: 0.8vw;
+    padding-top: 0.5vw;
 }
 
 .recipeImg {
@@ -228,27 +237,23 @@ strong {
 
 .tagsTitle {
     color: #393F4A;
-    font-size: 1.5em;
+    font-size: 1vw;
     margin: 0;
     font-weight: bold;
 }
 .tagBtn {
     background-color: #D27D2D;
-    margin-bottom: 1em;
+    margin-bottom: 1vw;
     color: white;
     width: 100%;
 }
 
 .welcomeHeader {
-    font-size: 2em;
+    font-size: 1vw;
     margin-bottom: 0;
     padding-bottom: 0;
     padding-top: 0;
 
-}
-.welcomeBody {
-    padding-top: 3em;
-    font-size: 1.3em;
 }
 
 

@@ -10,7 +10,7 @@
             <p class="welcomeHeader" 
                 style="font-family: 'playwriteustrad-variablefont_wght', sans-serif; 
                         font-weight:bold; 
-                        font-size : 4em;">
+                        font-size : 2.7vw;">
                 Hello World !
             </p>
             <p class="welcomeHeader">
@@ -21,23 +21,24 @@
 </header>
 
 <body class="mb-5">
-    <div class="d-flex justify-content-evenly mainBody">
-        <a class="navbar-brand" asp-area="" asp-page="/Recipies"><img class="navIcon" src="icons/chef-hat.png" alt="RecipeIcon"></a>
-        <a class="navbar-brand" asp-area="" asp-page="/Photografy"><img class="navIcon" src="icons/camera.png" alt="PhotografyIcon"></a>
-        <a class="navbar-brand" asp-area="" asp-page="/DoItYourself"><img class="navIcon" src="icons/diy.png" alt="DiyIcon"></a>
+    <div class="container d-flex justify-content-around mainBody">
+        <a class="navbar-brand d-flex justify-content-center" asp-area="" asp-page="/Recipies"><img class="navIcon" src="icons/chef-hat.png" alt="RecipeIcon"></a>
+        <a class="navbar-brand d-flex justify-content-center" asp-area="" asp-page="/Photografy"><img class="navIcon" src="icons/camera.png" alt="PhotografyIcon"></a>
+        <a class="navbar-brand d-flex justify-content-center" asp-area="" asp-page="/DoItYourself"><img class="navIcon" src="icons/diy.png" alt="DiyIcon"></a>
     </div>
     <div class="newsDiv d-flex flex-column">
         <p class="newsTitle">NEWS !</p>
-        <div class="newsPost d-flex justify-content-start">
-            <img class="newsImg" src="images/f6ab3467-0bf8-4c2f-921f-6c933fbd164a.jpg" />
+        <div class="newsPost d-flex">
+            <img class="newsImg d-flex align-content-center" src="images/f6ab3467-0bf8-4c2f-921f-6c933fbd164a.jpg" />
             <div class="d-flex flex-column" style="width: 80vw;">
                 <p class="newsPostTitle">News title</p>
+                @* <a class="navbar-brand btn newsBtn text-center" asp-area="" asp-page="/Recipies">Explore !</a> *@
                 <p class="newsText">
                     Exciting News: Local Creators Launch Inspiring Online Platform for Recipes, Photography & DIYs
 
                     A group of passionate creators has just launched a beautifully curated online platform that brings together three inspiring collections of content: delicious recipes, stunning photography, and creative DIY projects. Designed to spark imagination and encourage hands-on living, the platform showcases seasonal dishes, visual storytelling through photos, and step-by-step tutorials for home and craft projects.
                 </p>
-                <a class="navbar-brand btn newsBtn text-center" asp-area="" asp-page="/Recipies">Explore !</a>
+                
             </div>
         </div>
     </div>
@@ -46,12 +47,13 @@
             <img class="newsImg" src="images/f6ab3467-0bf8-4c2f-921f-6c933fbd164a.jpg" />
             <div class="d-flex flex-column" style="width: 80vw;">
                 <p class="newsPostTitle">News title</p>
+                @* <a class="navbar-brand btn newsBtn text-center" asp-area="" asp-page="/Recipies">Explore !</a> *@
                 <p class="newsText">
                     Exciting News: Local Creators Launch Inspiring Online Platform for Recipes, Photography & DIYs
 
                     A group of passionate creators has just launched a beautifully curated online platform that brings together three inspiring collections of content: delicious recipes, stunning photography, and creative DIY projects. Designed to spark imagination and encourage hands-on living, the platform showcases seasonal dishes, visual storytelling through photos, and step-by-step tutorials for home and craft projects.
                 </p>
-                <a class="navbar-brand btn newsBtn" asp-area="" asp-page="/Recipies" style="margin-left: 3em;">Explore !</a>
+                
             </div>
         </div>
     </div>
