@@ -42,7 +42,7 @@
     "50g butter"
   ],
   "Instructions": "Add all ingredients except the butter into a saucepan. Stir over medium-high to high heat until the sauce/cream thickens. DO NOT STOP STIRING! or you risk ending up with scrambled eggs. When the sauce/cream har thickend, add the butter and leave to cool under cover to prevent surface dryness. Enjoy !"
-},
+}
 {
   "Title": "Caramel slices",
   "Description": "Fast and easy cookies",
@@ -56,4 +56,19 @@
     "40g light or dark syrup"
   ],
   "Instructions": "Mix all ingredients in a bowl until combined. Form the cookie dough into long cylinders and flatten slightly. Bake for 8-12 minutes in 180°C or 350°F"
+}
+{
+  "Title": "Oak bran muffins",
+  "Description": "Fast and easy muffins",
+  "Category": ["Muffin"],
+  "Ingredients": [
+    "4 eggs worth of egg white",
+    "300g oat bran",
+    "3 tsp baking powder",
+    "10g baking powder",
+    "400g milk",
+    "100g light syrup",
+    "2 tbsp of neutral oil"
+  ],
+  "Instructions": "Beat the egg whites until stiff. Mix all dry ingredients in a seperate bowl. Add syrup, milk and oil to the dry ingredients and mix well. Fold in the eggwhite with the rest of the ingredients. Portion our evenly and bake in the oven on 225°C or 450°F for 10-20 minutes depending on muffin size and oven."
 }
