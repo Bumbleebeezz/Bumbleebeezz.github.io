@@ -11,15 +11,60 @@
             <p class="filterTitle">Filter</p>
         </div>
         <div class="tagsList border-bottom pb-4">
-            <p class="tagsTitle">Tags</p>
+            <p class="tagsTitle">Categories</p>
             <button class="btn active tagBtn">Show all</button>
-            <button class="btn tagBtn">Bird</button>
-            <button class="btn tagBtn">Forest</button>
-            <button class="btn tagBtn">.</button>
-            <button class="btn tagBtn">.</button>
-            <button class="btn tagBtn">.</button>
-            <button class="btn tagBtn">.</button>
+            @if (Model.Photos is null || !Model.Photos.Any())
+            {
+                <div class="apologyText p-3">
+                    <strong>Apology!</strong>
+                    <br />
+                    No photos was found
+                    <br />
+                    Please come back later
+                </div>
+            }
+            else
+            {
+                @foreach (var category in Model.Categories)
+                {
+                    <button class="btn tagBtn">@category</button>
+                }
+            }
         </div>
     </div>
+    <div class="photoList">
+        <div class="d-flex justify-content-center flex-wrap">
 
+            @foreach (var photo in Model.Photos)
+            {
+                <div class="card">
+                    <img class="card-img-top recipeImg" src="images/cj5a0842.jpg" alt="Card image cap">
+                    <div class="card-body p-0">
+                        <button type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <p class="card-title">@photo.Title</p>
+                        </button>
+                        <p class="card-text">@photo.Description</p>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">@photo.Title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
 </div>

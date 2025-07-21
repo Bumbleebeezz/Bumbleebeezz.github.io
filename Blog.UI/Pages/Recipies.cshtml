@@ -16,10 +16,10 @@
             <button class="btn active tagBtn">Show all</button>
             @if (Model.Recipes is null || !Model.Recipes.Any())
             {
-                <div class="">
+                <div class="apologyText p-3">
                     <strong>Apology!</strong>
                     <br />
-                    This page is under construction
+                    No recipies was found
                     <br />
                     Please come back later
                 </div>
@@ -39,7 +39,7 @@
             @foreach (var recipies in Model.Recipes)
             {
                 <div class="card">
-                    <img class="card-img-top recipeImg" src="images/cj5a0842.jpg" alt="Card image cap">
+                    <img class="card-img-top recipeImg" src="images/file-not-found.jpg" alt="Card image cap">
                     <div class="card-body p-0">
                         <button type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <p class="card-title">@recipies.Title</p>
@@ -47,25 +47,25 @@
                         <p class="card-text">@recipies.Description</p>
                     </div>
                 </div>
-                <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">@recipies.Title</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>
-                            </div>
+                
+            }
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
-            }
-            
+            </div>
         </div>
     </div>
 </div>

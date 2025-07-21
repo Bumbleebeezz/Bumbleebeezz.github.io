@@ -7,14 +7,14 @@ header, footer {
 p {
     font-family: 'jura-variablefont_wght', sans-serif;
     color : white;
-    padding : 0.5em;
+    padding : 0.5vw;
 }
 strong {
     padding-right:1em;
 }
 
 .alert {
-    background-color: #2196F3;
+    background-color: #1b98e0;
     font-size: 0.8vw;
     margin: 0;
     color: white;
@@ -27,8 +27,16 @@ strong {
     padding-left: 25em;
     padding-right: 25em;
     background-color: #393F4A;
-    align-items : end;
-    max-height : 780px;
+    align-items: end;
+    max-height: 780px;
+    
+}
+.apologyText {
+    font-family: 'jura-variablefont_wght', sans-serif;
+    font-size: 0.7vw;
+    background-color: #ea2b1f;
+    border-radius: 10px;
+    color: white;
 }
 
 .brand {
@@ -55,7 +63,7 @@ strong {
 .card {
     border: 3px solid #f5f3f4;
     border-radius: 20px;
-    width: 20%;
+    width: 15vw;
     margin: 3em;
 }
 .cardIcon{
@@ -84,7 +92,7 @@ strong {
 }
 
 .filterMenu {
-    width: 380px;
+    width: 15vw;
     height: 90vh;
     padding-left: 2.5em;
     padding-right: 2.5em;
@@ -273,8 +281,4 @@ strong {
     font-family: 'playwriteustrad-variablefont_wght';
     src: url('../fonts/playwriteustrad-variablefont_wght.ttf') format('truetype');
 }
-
-@font-face {
-    font-family: 'vt323-regular';
-    src: url('../fonts/vt323-regular.ttf') format('truetype');
-}    
+   
