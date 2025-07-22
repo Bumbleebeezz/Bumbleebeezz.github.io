@@ -1,8 +1,6 @@
 ﻿@page
 @model Blog.UI.Pages.RecipiesModel
 @{
-
-
 }
 
 
@@ -37,12 +35,12 @@
     <div class="recipeList"> 
         <div class="d-flex justify-content-center flex-wrap">
 
-            @foreach (var recipies in Model.Recipes)
+            @foreach (var recipies in @Model.Recipes)
             {
                 <div class="card">
                     <img class="card-img-top recipeImg" src="images/file-not-found.jpg" alt="Card image cap">
                     <div class="card-body p-0">
-                        <button onclick="@Model.OnGetRecipe(recipies.Id)" value="@recipies.Title" type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button onclick="@Model.OnGetRecipe(recipies.Id)" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <p class="card-title">@recipies.Title</p>
                         </button>
                     </div>
@@ -53,7 +51,7 @@
             <div class="modal fade bd-example-modal-xl" id="staticBackdrop" data-target=".bd-example-modal-xl" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
-                        @if (Model.SelectedRecipe is null)
+                        @if (@Model.SelectedRecipe is null)
                         {
                             <p>No content ... sorry :(</p>
                         }
@@ -67,7 +65,7 @@
                             <div class="modal-body">
                                 <p class="modal-text">@Model.SelectedRecipe.Description</p>
                                 <ul>
-                                    @foreach (var ingredient in Model.SelectedRecipe.Ingredients)
+                                    @foreach (var ingredient in @Model.SelectedRecipe.Ingredients)
                                     {
                                         <li>@ingredient</li>
                                     }
