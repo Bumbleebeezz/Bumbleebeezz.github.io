@@ -45,8 +45,6 @@
                         <button onclick="@Model.OnGetRecipe(recipies.Id)" value="@recipies.Title" type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <p class="card-title">@recipies.Title</p>
                         </button>
-                        
-                        <p class="card-text">@recipies.Description</p>
                     </div>
                 </div>
 
@@ -67,12 +65,15 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                                <p class="modal-text">@Model.SelectedRecipe.Description</p>
                                 <ul>
                                     @foreach (var ingredient in Model.SelectedRecipe.Ingredients)
                                     {
                                         <li>@ingredient</li>
                                     }
                                 </ul>
+                                <p class="modal-text">@Model.SelectedRecipe.Instructions</p>
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>

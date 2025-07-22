@@ -162,11 +162,16 @@ strong {
 }
 .modal-title {
     font-family: 'jura-variablefont_wght', sans-serif;
-    font-size: 10vw;
+    font-size: 1.5vw;
     color: #393F4A;
 }
-.modalImg{
-    width : 20vw;
+.modal-text, li {
+    font-family: 'jura-variablefont_wght', sans-serif;
+    font-size: 1vw;
+    color: #393F4A;
+}
+.modalImg {
+    width: 20vw;
 }
 
 .navLink {
