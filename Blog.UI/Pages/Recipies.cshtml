@@ -1,7 +1,8 @@
 ﻿@page
 @model Blog.UI.Pages.RecipiesModel
 @{
-
+    
+    
 }
 
 
@@ -41,7 +42,7 @@
                 <div class="card">
                     <img class="card-img-top recipeImg" src="images/file-not-found.jpg" alt="Card image cap">
                     <div class="card-body p-0">
-                        <button type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button value="@recipies.Title" type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <p class="card-title">@recipies.Title</p>
                         </button>
                         <p class="card-text">@recipies.Description</p>
@@ -50,15 +51,23 @@
                 
             }
             <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
+            <div class="modal fade bd-example-modal-xl" id="staticBackdrop" data-target=".bd-example-modal-xl" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Title</h1>
+                            <p class="modal-title" id="staticBackdropLabel">Title</p>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            @if (Model.SelectedRecipe != null)
+                            {
+                                <ul>
+                                    @foreach (var ingredient in Model.SelectedRecipe.Ingredients)
+                                    {
+                                        <li>@ingredient</li>
+                                    }
+                                </ul>
+                            }
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>

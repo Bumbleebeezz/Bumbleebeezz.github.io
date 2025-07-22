@@ -64,7 +64,7 @@ strong {
     border: 3px solid #f5f3f4;
     border-radius: 20px;
     width: 15vw;
-    margin: 3em;
+    margin: 2em;
 }
 .cardIcon{
     justify-self : center;
@@ -72,9 +72,10 @@ strong {
 }
 .card-title {
     font-family: 'jura-variablefont_wght', sans-serif;
+    font-size: 1vw;
 }
 .card-text {
-    font-size: 1vw;
+    font-size: 0.7vw;
     color: #393F4A;
 }
 .connectIcon {
@@ -146,20 +147,31 @@ strong {
     align-items: center;
     font-size : 1.5vw;
 }
+.modal{
+    width : 100vw;
+}
 .modalBtn {
     background-color: transparent;
     color: #393F4A;
-    font-size: 1.5em;
+    font-size: 0.8vw;
     width: 100%;
 }
 .modalBtn :hover {
     color: #D27D2D;
     text-decoration : none;
 }
+.modal-title {
+    font-family: 'jura-variablefont_wght', sans-serif;
+    font-size: 1.5vw;
+    color: #393F4A;
+}
+.modalImg{
+    width : 20vw;
+}
 
 .navLink {
     font-weight: bold;
-    font-size : 0.6vw;
+    font-size: 0.6vw;
 }
 .navLink:hover {
     text-decoration: underline 3px #D27D2D;
