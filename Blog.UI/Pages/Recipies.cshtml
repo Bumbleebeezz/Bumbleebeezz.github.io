@@ -1,8 +1,8 @@
 ﻿@page
 @model Blog.UI.Pages.RecipiesModel
 @{
-    
-    
+
+
 }
 
 
@@ -36,42 +36,48 @@
     </div>
     <div class="recipeList"> 
         <div class="d-flex justify-content-center flex-wrap">
-            
+
             @foreach (var recipies in Model.Recipes)
             {
                 <div class="card">
                     <img class="card-img-top recipeImg" src="images/file-not-found.jpg" alt="Card image cap">
                     <div class="card-body p-0">
-                        <button value="@recipies.Title" type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button onclick="@Model.OnGetRecipe(recipies.Id)" value="@recipies.Title" type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <p class="card-title">@recipies.Title</p>
                         </button>
+                        
                         <p class="card-text">@recipies.Description</p>
                     </div>
                 </div>
-                
+
             }
             <!-- Modal -->
             <div class="modal fade bd-example-modal-xl" id="staticBackdrop" data-target=".bd-example-modal-xl" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <p class="modal-title" id="staticBackdropLabel">Title</p>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            @if (Model.SelectedRecipe != null)
-                            {
+                        @if (Model.SelectedRecipe is null)
+                        {
+                            <p>No content ... sorry :(</p>
+                        }
+                        else
+                        {
+                            
+                            <div class="modal-header">
+                                <p class="modal-title" id="staticBackdropLabel">@Model.SelectedRecipe.Title</p>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
                                 <ul>
                                     @foreach (var ingredient in Model.SelectedRecipe.Ingredients)
                                     {
                                         <li>@ingredient</li>
                                     }
                                 </ul>
-                            }
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

@@ -1,8 +1,11 @@
+using Blog.Dataccess;
 using Blog.Dataccess.Entities.Foods;
 using Blog.Shared.DTOs.Foods;
 using Blog.Shared.Interfaces.Foods;
 using Blog.UI.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel;
 
@@ -18,7 +21,8 @@ namespace Blog.UI.Pages
             _logger = logger;
         }
 
-        public RecipeDto SelectedRecipe { get; set; } = new RecipeDto();
+        [BindProperty]
+        public RecipeDto? SelectedRecipe { get; set; } = new RecipeDto();
         public List<RecipeDto> Recipes { get; set; } = new();
         public List<string> Categories { get; set; } = new();
 
@@ -49,7 +53,7 @@ namespace Blog.UI.Pages
             }
         }
 
-        public async void OnGetRecipe(int id)
+        public async Task OnGetRecipe(int id)
         {
             try
             {
