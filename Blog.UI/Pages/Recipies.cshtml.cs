@@ -53,17 +53,18 @@ namespace Blog.UI.Pages
             }
         }
 
-        public async Task OnGetRecipe(int id)
+        public async Task<JsonResult> OnGetRecipe(int id)
         {
-            try
+            var recipe = await _recipeService.GetRecipeByIdAsync(id);
+            if (recipe == null) return new JsonResult(null);
+
+            return new JsonResult(new
             {
-                SelectedRecipe = await _recipeService.GetRecipeByIdAsync(id);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Failed to fetch recipe by ID");
-                // Handle the error appropriately, e.g., show an error message to the user
-            }
+                title = recipe.Title,
+                description = recipe.Description,
+                instructions = recipe.Instructions,
+                ingredients = recipe.Ingredients
+            });
         }
         public async void OnGetCategory(string category)
         {
