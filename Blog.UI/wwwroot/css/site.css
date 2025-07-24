@@ -260,10 +260,19 @@ strong {
     font-size: 0.8vw;
     padding-top: 0.5vw;
 }
+.printBtn {
+    background-color: transparent;
+    width: 1vw;
+    padding : 2%;
+}
 
 .recipeImg {
     width: 100%;
     border-radius: 10px 10px 0px 0px;
+}
+.recipeModalImg {
+    width: 10%;
+    border-radius: 10px;
 }
 
 .tagsTitle {
