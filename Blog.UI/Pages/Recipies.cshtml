@@ -25,19 +25,21 @@
             }
             else
             {
+                <!-- Category Buttons -->
                 @foreach (var category in Model.Categories)
                 {
-                    <button class="btn tagBtn">@category</button>
-                } 
+                    <button class="btn tagBtn" onclick="updateCategory('@category')">@category</button>
+                }
             }
+            <div id="selectedCategory">Selected: None</div>
         </div>
     </div>
-    <div class="recipeList"> 
+    <!-- Recipe List -->
+    <div id="recipeList">
         <div class="d-flex justify-content-center flex-wrap">
-
             @foreach (var recipe in Model.Recipes)
             {
-                <div class="card">
+                <div class="card m-2" data-categories="@string.Join(",", recipe.Category)">
                     <img class="card-img-top recipeImg" src="images/file-not-found.jpg" alt="Card image cap">
                     <div class="card-body p-0">
                         <button class="btn modalBtn"
@@ -78,7 +80,7 @@
 
 
 <script>
-        async function loadRecipe(recipeId) {
+    async function loadRecipe(recipeId) {
         try {
             const response = await fetch(`?handler=Recipe&id=${recipeId}`);
             if (!response.ok) throw new Error("Failed to load recipe");
@@ -101,6 +103,23 @@
             console.error(err);
             alert("Could not load recipe data.");
         }
+    }
+    function updateCategory(category) {
+        // Update the UI
+        document.getElementById('selectedCategory').innerText = 'Selected: ' + category;
+
+        // Get all recipe cards
+        const cards = document.querySelectorAll('#recipeList .card');
+
+        cards.forEach(card => {
+            const categories = card.dataset.categories.split(',');
+            // Show only cards that contain the selected category
+            if (categories.includes(category)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     }
 </script>
 
