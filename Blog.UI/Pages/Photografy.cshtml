@@ -39,7 +39,7 @@
             @foreach (var photo in Model.Photos)
             {
                 <div class="card" data-categories="@string.Join(",", photo.Category)">
-                    <img class="card-img-top photoImg" src="@photo.URL" alt="Card image cap">
+                    <img id="photoModalImg" class="card-img-top" src="@photo.URL" alt="Card image cap">
                     <div class="card-body p-0">
                         <button class="btn modalBtn"
                                 data-bs-toggle="modal"
@@ -48,6 +48,21 @@
                             <p class="card-title">@photo.Title</p>
                         </button>
                     </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="flip-card photoList">
+        <div class="flip-card-inner">
+            @foreach (var photo in Model.Photos)
+            {
+                <div class="flip-card-front">
+                    <img src="~/images/file-not-found.jpg" alt="Photo" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <p class="card-title">@photo.Title</p>
+                    <p class="card-text" style="color: white;">@photo.DateTaken.ToString("dd/MM/yyyy")</p>
+                    <p class="card-text" style="color: white;">@photo.Description</p>
                 </div>
             }
         </div>
@@ -66,11 +81,6 @@
                 <img id="photoModalImg" src="placeholder.jpg" alt="Photo" />
                 <p class="modal-text" id="photoDescription"></p>
             </div>
-            <div>
-                <a onclick="window.print()" class="btn printBtn">
-                    <img class="printBtn" src="icons/printer.png" />
-                </a>
-            </div>
         </div>
     </div>
 </div>
@@ -84,7 +94,7 @@
             const photo = await response.json();
 
             document.getElementById("photoDescription").textContent = photo.description;
-            document.getElementById("photoModalImg").src = photo.url;
+            document.getElementById("photoModalImg").src = photo.url ?? "images/fallback.jpg";
 
 
         } catch (err) {

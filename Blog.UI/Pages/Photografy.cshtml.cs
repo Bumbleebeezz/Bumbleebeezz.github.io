@@ -56,6 +56,7 @@ namespace Blog.UI.Pages
             return new JsonResult(new
             {
                 title = photo.Title,
+                url = photo.URL,
                 description = photo.Description,
                 DateTime = photo.DateTaken
             });
