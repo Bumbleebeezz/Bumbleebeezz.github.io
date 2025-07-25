@@ -1,4 +1,6 @@
-﻿using Blog.Shared.DTOs.DIY;
+﻿using Azure;
+using Blog.Shared.DTOs.DIY;
+using Blog.Shared.DTOs.Foods;
 using Blog.Shared.Interfaces.DIY;
 
 namespace Blog.UI.Services
@@ -27,15 +29,15 @@ namespace Blog.UI.Services
             return _httpClient.DeleteAsync(result.Result);
         }
 
-        public async Task<List<DoItYourselfDto?>> GetAllDIYsAsync()
+        public Task<IEnumerable<DoItYourselfDto?>> GetAllDIYsAsync()
         {
-            var respons = await _httpClient.GetAsync("api/diy");
-            if (!respons.IsSuccessStatusCode)
+            var respons = _httpClient.GetAsync("api/diy");
+            if (!respons.Result.IsSuccessStatusCode)
             {
                 throw new Exception("Failed to fetch DIYs");
             }
-            var result = await respons.Content.ReadFromJsonAsync<IEnumerable<DoItYourselfDto>>();
-            return result?.ToList() ?? new List<DoItYourselfDto?>();
+            var result =  respons.Result.Content.ReadFromJsonAsync<IEnumerable<DoItYourselfDto>>();
+            return result ?? Task.FromResult<IEnumerable<DoItYourselfDto?>>(new List<DoItYourselfDto?>());
         }
 
         public Task<DoItYourselfDto?> GetDIYByIdAsync(int id)

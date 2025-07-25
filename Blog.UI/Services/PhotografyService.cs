@@ -12,12 +12,12 @@ namespace Blog.UI.Services
         }
         public async Task AddPhotografyAsync(PhotoDto photografy)
         {
-            await _httpClient.PostAsJsonAsync("api/photografies", photografy);
+            await _httpClient.PostAsJsonAsync("api/photos", photografy);
         }
 
         public async Task DeletePhotografyAsync(int id)
         {
-            var respons = _httpClient.DeleteAsync($"api/photografies/{id}");
+            var respons = _httpClient.DeleteAsync($"api/photos/{id}");
             if (!respons.Result.IsSuccessStatusCode)
             {
                 throw new Exception("Failed to delete photografy");
@@ -28,7 +28,7 @@ namespace Blog.UI.Services
 
         public Task<IEnumerable<PhotoDto?>> GetAllPhotografiesAsync()
         {
-            var respons = _httpClient.GetAsync("api/photografies");
+            var respons = _httpClient.GetAsync("api/photos");
             if (!respons.Result.IsSuccessStatusCode)
             {
                 throw new Exception("Failed to fetch photografies");
@@ -39,7 +39,7 @@ namespace Blog.UI.Services
 
         public Task<IEnumerable<PhotoDto?>> GetPhotografiesByCategoryAsync(string category)
         {
-            var respons = _httpClient.GetAsync($"api/photografies/category/{category}");
+            var respons = _httpClient.GetAsync($"api/photos/category/{category}");
             if (!respons.Result.IsSuccessStatusCode)
             {
                 throw new Exception("Failed to fetch photografies by category");
@@ -50,7 +50,7 @@ namespace Blog.UI.Services
 
         public Task<PhotoDto?> GetPhotografyByIdAsync(int id)
         {
-            var respons = _httpClient.GetAsync($"api/photografies/{id}");
+            var respons = _httpClient.GetAsync($"api/photos/{id}");
             if (!respons.Result.IsSuccessStatusCode)
             {
                 throw new Exception($"Failed to fetch photografy with ID : {id}");
@@ -66,7 +66,7 @@ namespace Blog.UI.Services
 
         public async Task UpdatePhotografyAsync(PhotoDto photografy)
         {
-            await _httpClient.PutAsJsonAsync($"api/photografies/{photografy.Id}", photografy);
+            await _httpClient.PutAsJsonAsync($"api/photos/{photografy.Id}", photografy);
         }
     }
 }

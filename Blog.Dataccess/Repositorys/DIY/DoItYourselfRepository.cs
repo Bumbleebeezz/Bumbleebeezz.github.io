@@ -26,7 +26,7 @@ namespace Blog.Dataccess.Repositorys.DIY
             await context.SaveChangesAsync();
         }
 
-        public async Task<List<DoItYourself?>> GetAllDIYsAsync()
+        public async Task<IEnumerable<DoItYourself?>> GetAllDIYsAsync()
         {
             var allDIYs = await context.DIYs.ToListAsync();
             if (allDIYs is null || !allDIYs.Any())

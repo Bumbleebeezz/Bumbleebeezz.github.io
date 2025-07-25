@@ -64,7 +64,7 @@ strong {
     border: 3px solid #f5f3f4;
     border-radius: 20px;
     width: 15vw;
-    margin: 2em;
+    margin: 1vw;
 }
 .cardIcon{
     justify-self : center;
@@ -101,8 +101,8 @@ strong {
     font-family: 'vt323-regular', sans-serif;
 }
 .filterMenuIcon {
-    width: 2em;
-    height: 2em;
+    width: 2vw;
+    height: 2vw;
     display: flex;
     justify-self: center;
     align-self: center;
@@ -266,13 +266,16 @@ strong {
     padding : 2%;
 }
 
-.recipeImg {
+.recipeImg, .photoImg, .diyModalImg {
     width: 100%;
     border-radius: 10px 10px 0px 0px;
 }
 .recipeModalImg {
     width: 10%;
     border-radius: 10px;
+}
+.recipeList{
+    margin : 2vw;
 }
 
 .tagsTitle {
@@ -282,11 +285,14 @@ strong {
     font-weight: bold;
 }
 .tagBtn {
-    background-color: #D27D2D;
+    background-color: #393F4A;
     margin-bottom: 1vw;
     color: white;
     width: 100%;
 }
+    .tagBtn:hover {
+        background-color: #D27D2D;
+    }
 
 .welcomeHeader {
     font-size: 1vw;

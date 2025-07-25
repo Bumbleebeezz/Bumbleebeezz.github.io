@@ -4,7 +4,7 @@
 }
 
 
-<div class="d-flex flex-row justify-content-between">
+<div class="d-flex flex-row">
     <div class="filterMenu border-end">
         <div class="d-flex flex-row border-bottom">
             <img class="filterMenuIcon" src="icons/filter.png" />
@@ -12,7 +12,7 @@
         </div>
         <div class="tagsList border-bottom pb-4">
             <p class="tagsTitle">Categories</p>
-            <button class="btn active tagBtn">Show all</button>
+            <button class="btn active w-100 mb-5" onclick="showAllRecipes()">Show All</button>
             @if (Model.Photos is null || !Model.Photos.Any())
             {
                 <div class="apologyText p-3">
@@ -25,46 +25,98 @@
             }
             else
             {
+                <!-- Category Buttons -->
                 @foreach (var category in Model.Categories)
                 {
-                    <button class="btn tagBtn">@category</button>
+                    <button class="btn tagBtn" onclick="updateCategory('@category')">@category</button>
                 }
             }
         </div>
     </div>
-    <div class="photoList">
+    <!-- Photo List -->
+    <div id="photoList" class="photoList">
         <div class="d-flex justify-content-center flex-wrap">
-
             @foreach (var photo in Model.Photos)
             {
-                <div class="card">
-                    <img class="card-img-top recipeImg" src="images/cj5a0842.jpg" alt="Card image cap">
+                <div class="card" data-categories="@string.Join(",", photo.Category)">
+                    <img class="card-img-top photoImg" src="@photo.URL" alt="Card image cap">
                     <div class="card-body p-0">
-                        <button type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button class="btn modalBtn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#photoModal"
+                                onclick="loadPhoto('@photo.Id')">
                             <p class="card-title">@photo.Title</p>
                         </button>
-                        <p class="card-text">@photo.Description</p>
-                    </div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">@photo.Title</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             }
-
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="photoModalImg" src="placeholder.jpg" alt="Photo" />
+                <p class="modal-text" id="photoDescription"></p>
+            </div>
+            <div>
+                <a onclick="window.print()" class="btn printBtn">
+                    <img class="printBtn" src="icons/printer.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function loadPhoto(photoId) {
+        try {
+            const response = await fetch(`?handler=Photo&id=${photoId}`);
+            if (!response.ok) throw new Error("Failed to load photo");
+
+            const photo = await response.json();
+
+            document.getElementById("photoDescription").textContent = photo.description;
+            document.getElementById("photoModalImg").src = photo.url;
+
+
+        } catch (err) {
+            console.error(err);
+            alert("Could not load photo data.");
+        }
+    }
+    function updateCategory(category) {
+        // Update the UI
+        // document.getElementById('selectedCategory').innerText = 'Selected: ' + category;
+
+        // Get all photo cards
+        const cards = document.querySelectorAll('#photoList .card');
+
+        cards.forEach(card => {
+            const categories = card.dataset.categories.split(',');
+            // Show only cards that contain the selected category
+            if (categories.includes(category)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    function showAllPhotos() {
+        // Reset category display text
+        // document.getElementById('selectedCategory').innerText = 'Showing: All Photos';
+
+        // Show all photo cards
+        const cards = document.querySelectorAll('#photoList .card');
+        cards.forEach(card => {
+            card.style.display = 'block';
+        });
+    }
+</script>

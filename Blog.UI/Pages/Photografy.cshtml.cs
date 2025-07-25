@@ -1,5 +1,4 @@
 using Blog.Dataccess.Entities.Foods;
-using Blog.Shared.DTOs.DIY;
 using Blog.Shared.DTOs.Photografy;
 using Blog.Shared.Interfaces.Foods;
 using Blog.UI.Services;
@@ -18,7 +17,8 @@ namespace Blog.UI.Pages
             _photografyService = photografyService;
             _logger = logger;
         }
-
+        [BindProperty]
+        public PhotoDto? SelectedPhoto { get; set; } = new PhotoDto();
         public List<PhotoDto> Photos { get; set; } = new();
         public List<string> Categories { get; set; } = new();
 
@@ -45,6 +45,30 @@ namespace Blog.UI.Pages
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to fetch photos");
+                // Handle the error appropriately, e.g., show an error message to the user
+            }
+        }
+        public async Task<JsonResult> OnGetPhoto(int id)
+        {
+            var photo = await _photografyService.GetPhotografyByIdAsync(id);
+            if (photo == null) return new JsonResult(null);
+
+            return new JsonResult(new
+            {
+                title = photo.Title,
+                description = photo.Description,
+                DateTime = photo.DateTaken
+            });
+        }
+        public async void OnGetCategory(string category)
+        {
+            try
+            {
+                Photos = (await _photografyService.GetPhotografiesByCategoryAsync(category)).ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to fetch photos by category");
                 // Handle the error appropriately, e.g., show an error message to the user
             }
         }

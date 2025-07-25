@@ -4,7 +4,7 @@ namespace Blog.Shared.Interfaces.DIY
 {
     public interface IDoItYourselfService<T> where T : class
     {
-        Task<List<T?>> GetAllDIYsAsync();
+        Task<IEnumerable<T?>> GetAllDIYsAsync();
         Task<T?> GetDIYByIdAsync(int id);
         Task AddDIYAsync(T diy);
         Task UpdateDIYAsync(DoItYourselfDto diy);

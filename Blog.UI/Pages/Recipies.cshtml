@@ -12,7 +12,7 @@
         </div>
         <div class="tagsList border-bottom pb-4">
             <p class="tagsTitle">Categories</p>
-            <button class="btn active tagBtn">Show all</button>
+            <button class="btn active w-100 mb-5" onclick="showAllRecipes()">Show All</button>
             @if (Model.Recipes is null || !Model.Recipes.Any())
             {
                 <div class="apologyText p-3">
@@ -31,15 +31,15 @@
                     <button class="btn tagBtn" onclick="updateCategory('@category')">@category</button>
                 }
             }
-            <div id="selectedCategory">Selected: None</div>
+            @* <div id="selectedCategory">Selected: None</div> *@
         </div>
     </div>
     <!-- Recipe List -->
-    <div id="recipeList">
+    <div id="recipeList" class="recipeList">
         <div class="d-flex justify-content-center flex-wrap">
             @foreach (var recipe in Model.Recipes)
             {
-                <div class="card m-2" data-categories="@string.Join(",", recipe.Category)">
+                <div class="card" data-categories="@string.Join(",", recipe.Category)">
                     <img class="card-img-top recipeImg" src="images/file-not-found.jpg" alt="Card image cap">
                     <div class="card-body p-0">
                         <button class="btn modalBtn"
@@ -106,7 +106,7 @@
     }
     function updateCategory(category) {
         // Update the UI
-        document.getElementById('selectedCategory').innerText = 'Selected: ' + category;
+        // document.getElementById('selectedCategory').innerText = 'Selected: ' + category;
 
         // Get all recipe cards
         const cards = document.querySelectorAll('#recipeList .card');
@@ -119,6 +119,16 @@
             } else {
                 card.style.display = 'none';
             }
+        });
+    }
+    function showAllRecipes() {
+        // Reset category display text
+        // document.getElementById('selectedCategory').innerText = 'Showing: All Recipes';
+
+        // Show all recipe cards
+        const cards = document.querySelectorAll('#recipeList .card');
+        cards.forEach(card => {
+            card.style.display = 'block';
         });
     }
 </script>

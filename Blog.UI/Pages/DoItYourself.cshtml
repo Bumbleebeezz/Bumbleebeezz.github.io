@@ -3,7 +3,7 @@
 @{
 }
 
-<div class="d-flex flex-row justify-content-between">
+<div class="d-flex flex-row">
     <div class="filterMenu border-end">
         <div class="d-flex flex-row border-bottom">
             <img class="filterMenuIcon" src="icons/filter.png" />
@@ -11,59 +11,121 @@
         </div>
         <div class="tagsList border-bottom pb-4">
             <p class="tagsTitle">Categories</p>
-            <button class="btn active tagBtn">Show all</button>
+            <button class="btn active w-100 mb-5" onclick="showAllDiys()">Show All</button>
             @if (Model.DIYs is null || !Model.DIYs.Any())
             {
                 <div class="apologyText p-3">
                     <strong>Apology!</strong>
                     <br />
-                    No DIYs was found
+                    No recipies was found
                     <br />
                     Please come back later
                 </div>
             }
             else
             {
+                <!-- Category Buttons -->
                 @foreach (var category in Model.Categories)
                 {
-                    <button class="btn tagBtn">@category</button>
+                    <button class="btn tagBtn" onclick="updateCategory('@category')">@category</button>
                 }
             }
+            @* <div id="selectedCategory">Selected: None</div> *@
         </div>
     </div>
-    <div class="diyList">
+    <div class="diyList" id="diyList">
         <div class="d-flex justify-content-center flex-wrap">
-
             @foreach (var diy in Model.DIYs)
             {
-                <div class="card">
-                    <img class="card-img-top recipeImg" src="images/cj5a0842.jpg" alt="Card image cap">
+                <div class="card" data-categories="@string.Join(",", diy.Category)">
+                    <img class="card-img-top diyImg" src="images/file-not-found.jpg" alt="Card image cap">
                     <div class="card-body p-0">
-                        <button type="button" class="btn  modalBtn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button class="btn modalBtn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#diyModal"
+                                onclick="loadDiy('@diy.Id')">
                             <p class="card-title">@diy.Title</p>
                         </button>
-                        <p class="card-text">@diy.Description</p>
-                    </div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">@diy.Title</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn modalBtn" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             }
-
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="diyModal" tabindex="-1" aria-labelledby="diyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img class="diyModalImg" src="images/file-not-found.jpg" />
+                <p class="modal-title" id="diyModalLabel">DIY Title</p>
+                <p class="modal-text" id="diyDescription"></p>
+                <ul id="diyComponents" style="list-style-type: none;"></ul>
+                <p class="modal-text" id="diyInstructions"></p>
+            </div>
+            <div>
+                <a onclick="window.print()" class="btn printBtn">
+                    <img class="printBtn" src="icons/printer.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function loadDiy(diyId) {
+        try {
+            const response = await fetch(`?handler=diy&id=${diyId}`);
+            if (!response.ok) throw new Error("Failed to load diy");
+
+            const diy = await response.json();
+
+            document.getElementById("diyModalLabel").textContent = diy.title;
+            document.getElementById("diyDescription").textContent = diy.description;
+            document.getElementById("diyInstructions").textContent = diy.instructions;
+
+            const componentsList = document.getElementById("diyComponents");
+            componentsList.innerHTML = "";
+            diy.componentsList.forEach(ing => {
+                const li = document.createElement("li");
+                li.textContent = ing;
+                componentsList.appendChild(li);
+            });
+
+        } catch (err) {
+            console.error(err);
+            alert("Could not load diy data.");
+        }
+    }
+    function updateCategory(category) {
+        // Update the UI
+        // document.getElementById('selectedCategory').innerText = 'Selected: ' + category;
+
+        // Get all recipe cards
+        const cards = document.querySelectorAll('#diyList .card');
+
+        cards.forEach(card => {
+            const categories = card.dataset.categories.split(',');
+            // Show only cards that contain the selected category
+            if (categories.includes(category)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    function showAllDiys() {
+        // Reset category display text
+        // document.getElementById('selectedCategory').innerText = 'Showing: All Diys';
+
+        // Show all diy cards
+        const cards = document.querySelectorAll('#diyList .card');
+        cards.forEach(card => {
+            card.style.display = 'block';
+        });
+    }
+</script>

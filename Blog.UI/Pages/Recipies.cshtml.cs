@@ -1,13 +1,7 @@
-using Blog.Dataccess;
-using Blog.Dataccess.Entities.Foods;
 using Blog.Shared.DTOs.Foods;
-using Blog.Shared.Interfaces.Foods;
 using Blog.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.ComponentModel;
 
 namespace Blog.UI.Pages
 {
