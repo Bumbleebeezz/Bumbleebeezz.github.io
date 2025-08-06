@@ -73,8 +73,8 @@ strong {
 
 .card {
     border: 3px solid #f5f3f4;
-    border-radius: 20px;
-    width: 15vw;
+    border-radius: 50px;
+    width: 30%;
     margin: 1vw;
 }
 .cardIcon{
@@ -421,6 +421,9 @@ strong {
     background-color: transparent;
     width: 1vw;
     padding : 2%;
+}
+.photo{
+    width : 30%;
 }
 
 .recipeImg, .photoImg, .diyModalImg {
