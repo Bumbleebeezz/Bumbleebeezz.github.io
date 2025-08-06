@@ -368,8 +368,9 @@ strong {
 .newsPostTitle {
     margin: 0;
     margin-left: 1.6vw;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     font-weight: bold;
+
 }
 .newsText {
     margin-left: 2vw;
@@ -384,10 +385,10 @@ strong {
     padding-bottom: 1vw;
 }
 .newsImg {
-    width: 15vw;
-    height: 15vw;
-    border-radius: 1vw;
-    padding-top: 1vw;
+    width: 12vw;
+    height: 12vw;
+    border-radius : 1vw;
+    margin : 0.7vw;
 }
 /*.newsBtn {
     padding: 0;
