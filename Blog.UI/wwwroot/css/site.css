@@ -221,7 +221,7 @@ strong {
     color: #393F4A;
     font-size: 1.5vw;
     margin: 0;
-    font-family: 'playwriteustrad-variablefont_wght', sans-serif;
+    font-family: 'dynapuff-variablefont_wdth,wght', sans-serif;
 }
 .flex-container {
     display: flex;
@@ -277,8 +277,8 @@ strong {
 
 .latestTitle {
     color: #393F4A;
-    font-family: 'playwriteustrad-variablefont_wght', sans-serif;
-    font-size : 1.5vw;
+    font-family: 'macondo-regular', sans-serif;
+    font-size: 1.5vw;
 }
 
 .main {
@@ -466,8 +466,13 @@ strong {
 }
 
 @font-face {
-    font-family: 'playwriteustrad-variablefont_wght';
-    src: url('../fonts/playwriteustrad-variablefont_wght.ttf') format('truetype');
+    font-family: 'dynapuff-variablefont_wdth,wght';
+    src: url('../fonts/dynapuff-variablefont_wdth,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'macondo-regular';
+    src: url('../fonts/macondo-regular.ttf') format('truetype');
 }
 
 
