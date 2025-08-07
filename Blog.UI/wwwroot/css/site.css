@@ -72,10 +72,10 @@ strong {
 }
 
 .card {
-    border: 3px solid #f5f3f4;
-    border-radius: 50px;
-    width: 30%;
-    margin: 1vw;
+    border: 1px solid #f5f3f4;
+    border-radius: 10px;
+    width: 15%;
+    margin : 2vw;
 }
 .cardIcon{
     justify-self : center;
@@ -102,103 +102,10 @@ strong {
 .connectText {
     font-size: 0.7vw;
 }
-.card.card-carousel {
-    border: 0;
-    border-radius: 6px;
-    color: rgba(0,0,0,.87);
-    background: #fff;
-    width: 30vw;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-}
-.card.card-carousel img {
-    border-radius: 6px;
-}
-.carousel-indicators {
-    position: absolute;
-    right: 0;
-    bottom: 10px;
-    left: 0;
-    z-index: 15;
-    display: flex;
-    justify-content: center;
-    padding-left: 0;
-    margin-right: 15%;
-    margin-left: 15%;
-    list-style: none;
-}
-.carousel .carousel-indicators {
-    bottom: 5px;
-}
-.carousel .carousel-indicators li {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    text-indent: -999px;
-    cursor: pointer;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
-    border-radius: 2px;
-}
-.carousel .carousel-indicators .active {
-    margin: 11px 10px;
-}
-.carousel .carousel-indicators li {
-    margin: 11px 10px;
-}
-.carousel .carousel-indicators .active {
-    margin-top: 10px;
-    transform: scale(1.5);
-    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
-}
-.carousel-inner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-.carousel-item {
-    position: relative;
-    display: none;
-    align-items: center;
-    width: 100% !important;
-    transition: transform .6s ease;
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
-.carousel-item.active {
-    display: block;
-}
-.carousel .carousel-caption {
-    padding-bottom: 45px;
-}
-.carousel .carousel-caption .material-icons {
-    position: relative;
-    top: 5px;
-}
-.carousel .carousel-control-next .material-icons {
-    z-index: 5;
-    display: inline-block;
-    font-size: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 50px;
-    margin: auto;
-}
-.carousel .carousel-control-prev .material-icons {
-    z-index: 5;
-    display: inline-block;
-    font-size: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 50px;
-    margin: auto;
+.categoryName {
+    color: #393F4A;
+    font-family: 'dynapuff-variablefont_wdth,wght', sans-serif;
+    font-size: 0.8vw;
 }
 
 .filterMenu {
@@ -234,51 +141,20 @@ strong {
     border-radius: 5px;
     padding: 8px;
 }
-.flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px;
-    border-radius: 20px;
-}
 
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.flip-card-front {
-    background-color: transparent;
-    color: #393F4A;
-}
-
-.flip-card-back {
-    background-color: #393F4A;
-    color: white;
-    transform: rotateY(180deg);
-}
 
 .latestTitle {
-    color: #393F4A;
-    font-family: 'macondo-regular', sans-serif;
+    color: white;
+    font-family: 'jura-variablefont_wght', sans-serif;
     font-size: 1.5vw;
+}
+.latestImgHeight {
+    width: 60%;
+    border-radius: 10px;
+}
+.latestImgWidth {
+    height: 5%;
+    border-radius: 10px;
 }
 
 .main {
@@ -422,8 +298,8 @@ strong {
     width: 1vw;
     padding : 2%;
 }
-.photo{
-    width : 30%;
+.photo {
+    border-radius: 30px 30px 0px 0px;
 }
 
 .recipeImg, .photoImg, .diyModalImg {
@@ -450,9 +326,9 @@ strong {
     color: white;
     width: 100%;
 }
-    .tagBtn:hover {
-        background-color: #D27D2D;
-    }
+.tagBtn:hover {
+    background-color: #D27D2D;
+}
 
 .welcomeHeader {
     font-size: 1vw;
@@ -481,19 +357,7 @@ strong {
 
 
 
-html * {
-    -webkit-font-smoothing: antialiased;
-}
 
-h3 {
-    font-weight: 300 !important;
-    font-size: 25px !important;
-}
-
-h4 {
-    font-size: 18px !important;
-    font-weight: 300 !important;
-}
 
 
 
