@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BuzzerBee´s Collection</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Blog.UI.styles.css" asp-append-version="true" />
+</head>
+<body class="">
+    <header class="pt-3">
+        <div class="d-flex flex-row justify-content-start align-items-center">
+                <div class="d-flex align-items-center navmenu">
+                    <a class="navbar-brand" asp-area="" asp-page="/Index"><p class="brand" style="font-weight: bold;">BuzzerBee´s Collection</p></a>
+                <a class="navbar-brand" asp-area="" asp-page="/Recipies" style="pointer-events: none"><p style="color: #6c757d;" class="navLink">RECIPIES</p></a>
+                    <a class="navbar-brand" asp-area="" asp-page="/Photografy"><p class="navLink">PHOTOGRAFY</p></a>
+                <a class="navbar-brand" asp-area="" asp-page="/DoItYourself" style="pointer-events: none; "><p class="navLink" style="color: #6c757d;">DO IT YOURSELF</p></a>
+                <a class="navbar-brand" asp-area="" asp-page="/About"><p class="navLink">ABOUT ME</p></a>
+                </div>
+        </div>
+        <div class="alert info text-center">
+            <strong>Info!</strong> This website is currently under development. Please be patient while this process is ongoing.
+        </div>
+    </header>
+    <div class="">
+        
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="d-flex flex-row justify-content-around align-items-center p-2 m-0 border-top">
+        <p style="color: #393F4A;  font-size: 0.7vw;" class="nav-menu-item mb-0">&copy; 2025 - BuzzerBee´s Collection </p>
+        <p style="color: #393F4A; font-weight:bold;" class="nav-menu-item mb-0 connectText">
+            Connect with me:
+            <a href="https://www.linkedin.com/in/maria-edstr%C3%B6m-6b2215178/"><img class="connectIcon" src="icons/linkedin.png" /></a>
+            <a href="https://www.instagram.com/studio_buzzer?igsh=d2F6cHE4NDdnMW5n"><img class="connectIcon" src="icons/instagram.png" /></a>
+            <a href="https://github.com/Bumbleebeezz"><img class="connectIcon" src="icons/github.png" /></a>
+        </p>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
