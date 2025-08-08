@@ -1,6 +1,55 @@
-﻿namespace Blog.UI.Pages
-{
-    public class index
-    {
-    }
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
 }
+
+
+<header class="main">
+    <div class="flex-container text-center">
+        <div class="mainHeaderText">
+            <p class="welcomeHeader"
+               style="font-family: 'dynapuff-variablefont_wdth,wght', sans-serif;
+                        font-weight:bold; 
+                        font-size : 3vw;">
+                Hello World !
+            </p>
+            <p class="welcomeHeader">
+                Jump into 3 unique collections of stunning photos, upcoming recipes and creative DIYs!
+            </p>
+        </div>
+    </div>
+</header>
+
+<body class="mb-5">
+    <div class="container d-flex justify-content-evenly mainBody">
+        <a class="navbar-brand d-flex justify-content-center" asp-area="" asp-page="/Recipies" style="pointer-events: none"><img style="filter: grayscale(100%);" class="navIcon" src="icons/chef-hat.png" alt="RecipeIcon"></a>
+        <a class="navbar-brand d-flex justify-content-center" asp-area="" asp-page="/Photografy"><img class="navIcon" src="icons/camera.png" alt="PhotografyIcon"></a>
+        <a class="navbar-brand d-flex justify-content-center" asp-area="" asp-page="/DoItYourself" style="pointer-events: none"><img style="filter: grayscale(100%);" class="navIcon" src="icons/diy.png" alt="DiyIcon"></a>
+    </div>
+    <div class="newsDiv d-flex flex-column">
+        <p class="newsTitle">NEWS !</p>
+        <div class="newsPost d-flex">
+            <img class="newsImg d-flex align-content-center" src="images/launchimg.jpg" />
+            <div class="d-flex flex-column" style="width: 80vw;">
+                <p class="newsPostTitle">We’re LIVE! Welcome reader <span class="badge">New</span></p>
+                @* <a class="navbar-brand btn newsBtn text-center" asp-area="" asp-page="/Recipies">Explore !</a> *@
+                <p class="newsText">
+                    <strong>Exciting News:</strong>
+                    <br /> 
+                    We’re excited to announce the official launch of this brand-new website! Join this website´s journey as it develops and improves.
+
+                    Explore a curated collection of inspiring photography and upcoming delicious recipes and creative DIY projects  — all in one , easy-to-navigate space.
+
+                    Whether you're here to cook, create, or be inspired, there will be something for everyone.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer>
+
+</footer>
+
