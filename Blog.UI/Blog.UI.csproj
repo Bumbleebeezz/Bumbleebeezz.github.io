@@ -7,6 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Pages\About.html" />
+    <Content Include="Pages\DoItYourself.html" />
+    <Content Include="Pages\Error.html" />
+    <Content Include="Pages\Index.html" />
+    <Content Include="Pages\Photografy.html" />
+    <Content Include="Pages\Recipies.html" />
+    <Content Include="Pages\Shared\_Layout.html" />
+    <Content Include="Pages\Shared\_ValidationScriptsPartial.html" />
+    <Content Include="Pages\_ViewImports.html" />
+    <Content Include="Pages\_ViewStart.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\fonts\" />
     <Folder Include="wwwroot\icons\" />
     <Folder Include="wwwroot\images\photos\" />
